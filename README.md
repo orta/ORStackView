@@ -6,7 +6,7 @@
 Makes setting up a collection of stacked views simple.
 Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using. 
 
-```
+```objc
 - (void)loadView
 {
     self.view = [[ORStackView alloc] init];
@@ -31,7 +31,7 @@ Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the AP
 
 Optionally if you have views which should only appear once you've got confirmation from an external source you can use view tags to specify an order. For example these views will be ordered correctly regardless of the insertation order chronologically.
 
-```
+```objc
 - (void)loadView
 {
     self.view = [[ORTagBasedAutoStackView alloc] init];
