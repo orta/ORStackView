@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		604D942817BCD45900E331B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604D942717BCD45900E331B1 /* Foundation.framework */; };
+		604D942A17BCD45900E331B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604D942917BCD45900E331B1 /* CoreGraphics.framework */; };
+		604D942C17BCD45900E331B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604D942B17BCD45900E331B1 /* UIKit.framework */; };
+		604D943217BCD45900E331B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 604D943017BCD45900E331B1 /* InfoPlist.strings */; };
+		604D943417BCD45900E331B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D943317BCD45900E331B1 /* main.m */; };
+		604D943817BCD45900E331B1 /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D943717BCD45900E331B1 /* ORAppDelegate.m */; };
+		604D943B17BCD45900E331B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604D943917BCD45900E331B1 /* Main.storyboard */; };
+		604D943E17BCD45900E331B1 /* ORFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D943D17BCD45900E331B1 /* ORFirstViewController.m */; };
+		604D944117BCD45900E331B1 /* ORSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D944017BCD45900E331B1 /* ORSecondViewController.m */; };
+		604D944317BCD45900E331B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604D944217BCD45900E331B1 /* Images.xcassets */; };
+		604D946117BCE93500E331B1 /* ORColourView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D946017BCE93500E331B1 /* ORColourView.m */; };
+		6070C4B217DF51250091D918 /* ORThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6070C4B117DF51250091D918 /* ORThirdViewController.m */; };
+		F60BF2053A5B4CE190BA41D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 272807D13A5B45F284048323 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E9A1FA7C69742AE970F49A1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		272807D13A5B45F284048323 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		600A785595144E539EB85BBB /* libPods-ARAutoLayoutStackExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAutoLayoutStackExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		604D942417BCD45900E331B1 /* ORStackViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORStackViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		604D942717BCD45900E331B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		604D942917BCD45900E331B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		604D942B17BCD45900E331B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		604D942F17BCD45900E331B1 /* ARAutoLayoutStackExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ARAutoLayoutStackExample-Info.plist"; sourceTree = "<group>"; };
+		604D943117BCD45900E331B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		604D943317BCD45900E331B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		604D943517BCD45900E331B1 /* ORStackViewExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORStackViewExample-Prefix.pch"; sourceTree = "<group>"; };
+		604D943617BCD45900E331B1 /* ORAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORAppDelegate.h; sourceTree = "<group>"; };
+		604D943717BCD45900E331B1 /* ORAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORAppDelegate.m; sourceTree = "<group>"; };
+		604D943A17BCD45900E331B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		604D943C17BCD45900E331B1 /* ORFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORFirstViewController.h; sourceTree = "<group>"; };
+		604D943D17BCD45900E331B1 /* ORFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORFirstViewController.m; sourceTree = "<group>"; };
+		604D943F17BCD45900E331B1 /* ORSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSecondViewController.h; sourceTree = "<group>"; };
+		604D944017BCD45900E331B1 /* ORSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORSecondViewController.m; sourceTree = "<group>"; };
+		604D944217BCD45900E331B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		604D944917BCD45900E331B1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		604D945F17BCE93500E331B1 /* ORColourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORColourView.h; sourceTree = "<group>"; };
+		604D946017BCE93500E331B1 /* ORColourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORColourView.m; sourceTree = "<group>"; };
+		6070C4B017DF51250091D918 /* ORThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORThirdViewController.h; sourceTree = "<group>"; };
+		6070C4B117DF51250091D918 /* ORThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORThirdViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		604D942117BCD45900E331B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				604D942A17BCD45900E331B1 /* CoreGraphics.framework in Frameworks */,
+				604D942C17BCD45900E331B1 /* UIKit.framework in Frameworks */,
+				604D942817BCD45900E331B1 /* Foundation.framework in Frameworks */,
+				F60BF2053A5B4CE190BA41D0 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		604D941B17BCD45900E331B1 = {
+			isa = PBXGroup;
+			children = (
+				604D942D17BCD45900E331B1 /* ORStackViewExample */,
+				604D942617BCD45900E331B1 /* Frameworks */,
+				604D942517BCD45900E331B1 /* Products */,
+				0E9A1FA7C69742AE970F49A1 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		604D942517BCD45900E331B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				604D942417BCD45900E331B1 /* ORStackViewExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		604D942617BCD45900E331B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				604D942717BCD45900E331B1 /* Foundation.framework */,
+				604D942917BCD45900E331B1 /* CoreGraphics.framework */,
+				604D942B17BCD45900E331B1 /* UIKit.framework */,
+				604D944917BCD45900E331B1 /* XCTest.framework */,
+				272807D13A5B45F284048323 /* libPods.a */,
+				600A785595144E539EB85BBB /* libPods-ARAutoLayoutStackExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		604D942D17BCD45900E331B1 /* ORStackViewExample */ = {
+			isa = PBXGroup;
+			children = (
+				6070C4B417DF5B3D0091D918 /* Misc */,
+				6070C4B317DF5B310091D918 /* Example View Controllers */,
+				604D942E17BCD45900E331B1 /* Supporting Files */,
+			);
+			path = ORStackViewExample;
+			sourceTree = "<group>";
+		};
+		604D942E17BCD45900E331B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				604D942F17BCD45900E331B1 /* ARAutoLayoutStackExample-Info.plist */,
+				604D943017BCD45900E331B1 /* InfoPlist.strings */,
+				604D943317BCD45900E331B1 /* main.m */,
+				604D943517BCD45900E331B1 /* ORStackViewExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6070C4B317DF5B310091D918 /* Example View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				604D943C17BCD45900E331B1 /* ORFirstViewController.h */,
+				604D943D17BCD45900E331B1 /* ORFirstViewController.m */,
+				604D943F17BCD45900E331B1 /* ORSecondViewController.h */,
+				604D944017BCD45900E331B1 /* ORSecondViewController.m */,
+				6070C4B017DF51250091D918 /* ORThirdViewController.h */,
+				6070C4B117DF51250091D918 /* ORThirdViewController.m */,
+			);
+			name = "Example View Controllers";
+			sourceTree = "<group>";
+		};
+		6070C4B417DF5B3D0091D918 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				604D945F17BCE93500E331B1 /* ORColourView.h */,
+				604D946017BCE93500E331B1 /* ORColourView.m */,
+				604D943617BCD45900E331B1 /* ORAppDelegate.h */,
+				604D943717BCD45900E331B1 /* ORAppDelegate.m */,
+				604D943917BCD45900E331B1 /* Main.storyboard */,
+				604D944217BCD45900E331B1 /* Images.xcassets */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		604D942317BCD45900E331B1 /* ORStackViewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 604D945917BCD45900E331B1 /* Build configuration list for PBXNativeTarget "ORStackViewExample" */;
+			buildPhases = (
+				E7AEB82569274793852D906B /* Check Pods Manifest.lock */,
+				604D942017BCD45900E331B1 /* Sources */,
+				604D942117BCD45900E331B1 /* Frameworks */,
+				604D942217BCD45900E331B1 /* Resources */,
+				A7459F1A43CD44ECA12553B6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ORStackViewExample;
+			productName = ARAutoLayoutStackExample;
+			productReference = 604D942417BCD45900E331B1 /* ORStackViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		604D941C17BCD45900E331B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Orta;
+			};
+			buildConfigurationList = 604D941F17BCD45900E331B1 /* Build configuration list for PBXProject "ORStackViewExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 604D941B17BCD45900E331B1;
+			productRefGroup = 604D942517BCD45900E331B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				604D942317BCD45900E331B1 /* ORStackViewExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		604D942217BCD45900E331B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				604D944317BCD45900E331B1 /* Images.xcassets in Resources */,
+				604D943217BCD45900E331B1 /* InfoPlist.strings in Resources */,
+				604D943B17BCD45900E331B1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7459F1A43CD44ECA12553B6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AEB82569274793852D906B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		604D942017BCD45900E331B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				604D943417BCD45900E331B1 /* main.m in Sources */,
+				604D943817BCD45900E331B1 /* ORAppDelegate.m in Sources */,
+				6070C4B217DF51250091D918 /* ORThirdViewController.m in Sources */,
+				604D943E17BCD45900E331B1 /* ORFirstViewController.m in Sources */,
+				604D946117BCE93500E331B1 /* ORColourView.m in Sources */,
+				604D944117BCD45900E331B1 /* ORSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		604D943017BCD45900E331B1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				604D943117BCD45900E331B1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		604D943917BCD45900E331B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				604D943A17BCD45900E331B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		604D945717BCD45900E331B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		604D945817BCD45900E331B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		604D945A17BCD45900E331B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E9A1FA7C69742AE970F49A1 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARAutoLayoutStackExample/ORStackViewExample-Prefix.pch";
+				INFOPLIST_FILE = "ARAutoLayoutStackExample/ARAutoLayoutStackExample-Info.plist";
+				PRODUCT_NAME = ORStackViewExample;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		604D945B17BCD45900E331B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E9A1FA7C69742AE970F49A1 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ARAutoLayoutStackExample/ORStackViewExample-Prefix.pch";
+				INFOPLIST_FILE = "ARAutoLayoutStackExample/ARAutoLayoutStackExample-Info.plist";
+				PRODUCT_NAME = ORStackViewExample;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		604D941F17BCD45900E331B1 /* Build configuration list for PBXProject "ORStackViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				604D945717BCD45900E331B1 /* Debug */,
+				604D945817BCD45900E331B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		604D945917BCD45900E331B1 /* Build configuration list for PBXNativeTarget "ORStackViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				604D945A17BCD45900E331B1 /* Debug */,
+				604D945B17BCD45900E331B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 604D941C17BCD45900E331B1 /* Project object */;
+}

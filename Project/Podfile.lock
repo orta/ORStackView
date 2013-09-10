@@ -1,0 +1,17 @@
+PODS:
+  - FLKAutoLayout (0.1.1)
+  - ORStackView (0.1.0):
+    - FLKAutoLayout (~> 0.1)
+
+DEPENDENCIES:
+  - ORStackView (from `../`)
+
+EXTERNAL SOURCES:
+  ORStackView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FLKAutoLayout: fc04b932009174d4118ef4bda9dc8fedf1369efc
+  ORStackView: 8608aaed7f4a1f589b65e67f2e698a02a96799ff
+
+COCOAPODS: 0.24.0
