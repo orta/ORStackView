@@ -4,7 +4,7 @@
 [![Platform](http://cocoapod-badges.herokuapp.com/p/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
 
 Makes setting up a collection of stacked views simple.
-Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using. 
+Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
 
 ```objc
 - (void)loadView
@@ -67,7 +67,7 @@ Optionally if you have views which should only appear once you've got confirmati
 }
 ```
 
-## Usage
+## Example Usage
 
 To run the example project; clone the repo, and run `pod install` from the Project directory first.
 
