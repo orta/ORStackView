@@ -50,15 +50,10 @@
     content3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
     content3.tag = 5;
 
-    NSLog(@"0");
     [self.view addSubview:subtitle withTopMargin:@"10" sideMargin:@"70"];
-    NSLog(@"1");
     [self.view addSubview:content withTopMargin:@"20" sideMargin:@"20"];
-    NSLog(@"2");
     [self.view addSubview:content3 withTopMargin:@"20" sideMargin:@"20"];
-    NSLog(@"2");
     [self.view addSubview:content2 withTopMargin:@"10" sideMargin:@"20"];
-    NSLog(@"0");
     [self.view addSubview:title withTopMargin:@"20" sideMargin:@"30"];
 }
 
