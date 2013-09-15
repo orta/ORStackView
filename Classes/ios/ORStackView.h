@@ -20,7 +20,6 @@
 - (void)addSubview:(UIView *)view withTopMargin:(NSString *)topMargin sideMargin:(NSString *)sideMargin;
 
 
-
 // Note: These indexes are not z-order, but stack order. z-index ordering can be done with the UIView method
 // bringSubviewToFront:
 
@@ -36,11 +35,11 @@
 /// Insert a subview above another view, will assert if view is not found
 - (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview withTopMargin:(NSString *)margin;
 
-
+/// Remove a subview from the Stack View
+- (void)removeSubview:(UIView *)subview;
 
 /// Perform insertion / removals without updaing the constraints
 - (void)performBatchUpdates:(void (^)(void))updates;
-
 
 
 // Useful getters

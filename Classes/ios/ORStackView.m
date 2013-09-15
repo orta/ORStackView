@@ -95,6 +95,7 @@
 - (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview withTopMargin:(NSString *)margin
 {
     NSAssert([self.subviews containsObject:siblingSubview], @"SiblingSubview not found in ORStackView");
+
     NSInteger index = [self indexOfView:siblingSubview] - 1;
     [self _insertSubview:view atIndex:index withTopMargin:margin centered:NO sideMargin:nil];
 }
@@ -121,6 +122,21 @@
 
         [view constrainWidthToView:self predicate:invertedSideMargin];
         [view alignCenterXWithView:self predicate:nil];
+    }
+
+    if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
+}
+
+- (void)removeSubview:(UIView *)subview
+{
+    if (![self.subviews containsObject:subview]) return;
+
+    [subview removeFromSuperview];
+
+    for (StackView *stackView in self.viewStack.copy) {
+        if ([subview isEqual:stackView.view]) {
+            [self.viewStack removeObject:stackView];
+        }
     }
 
     if (!self.batchingUpdates) [self setNeedsUpdateConstraints];

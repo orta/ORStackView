@@ -51,6 +51,14 @@
     content.text = @"Lorem ipsum, etc. etc.";
     content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 10 };
     [self.view addSubview:content withTopMargin:@"5" sideMargin:@"40"];
+
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
+    [content addGestureRecognizer:tapGesture];
+}
+
+- (void)removeTappedView:(UITapGestureRecognizer *)gesture
+{
+    [self.view removeSubview:gesture.view];
 }
 
 @end
