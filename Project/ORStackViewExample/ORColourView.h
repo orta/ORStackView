@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Orta. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface ORColourView : UILabel
 
 // Fake the intrinsicContentSize so that we can say the

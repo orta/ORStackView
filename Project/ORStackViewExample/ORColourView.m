@@ -20,7 +20,8 @@
 
 @implementation ORColourView
 
-- (id)init {
+- (instancetype)init
+{
     self = [super init];
     if (!self) return nil;
 

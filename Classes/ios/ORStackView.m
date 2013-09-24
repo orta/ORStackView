@@ -14,6 +14,7 @@
 
 /// Delay updating constraints when true
 @property (nonatomic, assign) BOOL batchingUpdates;
+@property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
 
 @end
 
@@ -49,6 +50,14 @@
             UIView *viewAbove = [self.viewStack[index - 1] view];
             stackView.topConstraint = [[view constrainTopSpaceToView:viewAbove predicate:predicate] lastObject];
         }
+    }
+
+    if (self.bottomMarginHeight != NSNotFound) {
+        [self removeConstraint:self.bottomConstraint];
+
+        NSString *constraint = [NSString stringWithFormat:@"%0.0f", self.bottomMarginHeight];
+        UIView *lastView = self.lastView;
+        self.bottomConstraint = [[self alignBottomEdgeWithView:lastView predicate:constraint] lastObject];
     }
 
     [super updateConstraints];

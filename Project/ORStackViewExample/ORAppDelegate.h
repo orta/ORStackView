@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Orta. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface ORAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

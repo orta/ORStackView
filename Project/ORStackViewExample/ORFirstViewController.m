@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     ORColourView *title = [[ORColourView alloc] init];
-    title.text = @"Title";
+    title.text = @"Title - Tap Me";
     title.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
@@ -41,15 +41,15 @@
     content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
     [self.view addSubview:title withTopMargin:@"20" sideMargin:@"30"];
-    [self.view addSubview:subtitle withTopMargin:@"40" sideMargin:@"70"];
+    [self.view addSubview:subtitle withTopMargin:@"10" sideMargin:@"70"];
     [self.view addSubview:content withTopMargin:@"60" sideMargin:@"20"];
 }
 
 - (void)addView
 {
     ORColourView *content = [[ORColourView alloc] init];
-    content.text = @"Lorem ipsum, etc. etc.";
-    content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 10 };
+    content.text = @"Tap to remove";
+    content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
     [self.view addSubview:content withTopMargin:@"5" sideMargin:@"40"];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
