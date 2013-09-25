@@ -26,31 +26,13 @@
 
 - (void)viewDidLoad
 {
-    ORColourView *title = [[ORColourView alloc] init];
-    title.text = @"1 Title";
-    title.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
-    title.tag = 1;
+    for (NSInteger i = 0; i < 20; i++) {
+        ORColourView *title = [[ORColourView alloc] init];
+        title.text = [NSString stringWithFormat:@" - %i - ", i];
+        title.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , roundf(arc4random() % 120)};
 
-    [self.view.stackView addSubview:title withTopMargin:@"20" sideMargin:@"20"];
+        [self.view.stackView addSubview:title withTopMargin:@"20" sideMargin:@"40"];
+    }
 }
-
-- (void)addView
-{
-    ORColourView *content = [[ORColourView alloc] init];
-    content.text = @"Tap to remove";
-    content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-    [self.view.stackView addSubview:content withTopMargin:@"5" sideMargin:@"40"];
-
-    [self.view flashScrollIndicators];
-
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
-    [content addGestureRecognizer:tapGesture];
-}
-
-- (void)removeTappedView:(UITapGestureRecognizer *)gesture
-{
-    [self.view.stackView removeSubview:gesture.view];
-}
-
 
 @end

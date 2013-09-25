@@ -27,15 +27,12 @@
     self = [super init];
     if (!self) return self;
 
-    self.backgroundColor = [UIColor greenColor];
-
     _stackView = [[klass alloc] init];
     _stackView.bottomMarginHeight = 0;
 
     [self addSubview:_stackView];
-
-    [self alignTopEdgeWithView:_stackView predicate:@"0"];
-    [self alignBottomEdgeWithView:_stackView predicate:@"0"];
+    [_stackView alignToView:self];
+    [_stackView constrainWidthToView:self predicate:@""];
 
     return self;
 }
