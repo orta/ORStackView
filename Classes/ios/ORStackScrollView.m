@@ -17,11 +17,25 @@
 
 - (instancetype)init
 {
+    return [self initWithStackViewClass:[ORStackView class]];
+}
+
+- (instancetype)initWithStackViewClass:(Class)klass
+{
+    NSAssert([klass isSubclassOfClass:[ORStackView class]], @"Class for ORStackScrollView must be a ORStackView subclass");
+
     self = [super init];
     if (!self) return self;
 
-    _stackView = [[ORStackView alloc] init];
-    self 
+    self.backgroundColor = [UIColor greenColor];
+
+    _stackView = [[klass alloc] init];
+    _stackView.bottomMarginHeight = 0;
+
+    [self addSubview:_stackView];
+
+    [self alignTopEdgeWithView:_stackView predicate:@"0"];
+    [self alignBottomEdgeWithView:_stackView predicate:@"0"];
 
     return self;
 }

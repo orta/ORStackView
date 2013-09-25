@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Orta. All rights reserved.
 //
 
-/// A view that will handle vertical stacking subviews for you
-/// allowing arbitrary insertion or removal
-
 #import "ORStackScrollView.h"
 #import "ORStackView.h"
+
+/// A UIScrollView subclass that is automatically set up with the
+/// common constraints for a scrollable ORStackView
 
 @interface ORStackScrollView : UIScrollView
 
 @property (nonatomic, strong, readonly) ORStackView *stackView;
 
-/// TODO: Optional init method inacse you want to use a subview
-//  - (instancetype)initWithStackViewClass:(Class)klass;
+/// Optional init method incase you want to use a subclass of ORStackView
+- (instancetype)initWithStackViewClass:(Class)klass;
 
 @end

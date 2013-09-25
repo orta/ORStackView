@@ -26,6 +26,7 @@
     if (!self) return nil;
 
     _viewStack = [NSMutableArray array];
+    _bottomMarginHeight = NSNotFound;
 
     return self;
 }

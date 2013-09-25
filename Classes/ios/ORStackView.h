@@ -20,8 +20,8 @@
 - (void)addSubview:(UIView *)view withTopMargin:(NSString *)topMargin sideMargin:(NSString *)sideMargin;
 
 
-// Note: These indexes are not z-order, but stack order. z-index ordering can be done with the UIView method
-// bringSubviewToFront:
+// Note: These indexes are not z-order, but stack order.
+//  z-index ordering can be done with the UIView methods bringSubviewToFront:
 
 /// Insert a subview at an arbitrary index in the stack's order
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(NSString *)margin;
