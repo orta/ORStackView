@@ -20,15 +20,20 @@
 
 @implementation ORStackView
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (!self) return nil;
-
+    
     _viewStack = [NSMutableArray array];
     _bottomMarginHeight = NSNotFound;
-
+    
     return self;
+}
+
+- (instancetype)init
+{
+    return [self initWithFrame:CGRectZero];
 }
 
 - (void)updateConstraints
