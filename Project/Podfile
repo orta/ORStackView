@@ -1,1 +1,1 @@
-pod "ORStackView", :path => "../"
+pod "ORStackView", :path => "../ORStackView.podspec"
