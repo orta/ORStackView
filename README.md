@@ -6,7 +6,7 @@
 Makes setting up a collection of stacked views simple.
 Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
 
- <img align="left" width="160" src="https://github.com/orta/ORStackView/raw/master/web/simple.png" />
+ <a href="https://github.com/orta/ORStackView/raw/master/web/simple.png"><img align="left" width="160" src="https://github.com/orta/ORStackView/raw/master/web/simple.png" /></a>
 
 ```objc
 - (void)loadView
@@ -33,7 +33,7 @@ Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the AP
 
 Optionally if you have views which should only appear once you've got confirmation from an external source you can use view tags to specify an order. For example these views will be ordered correctly regardless of the insertion order chronologically.
 
- <img align="left" width="160" src="https://github.com/orta/ORStackView/raw/master/web/tagged.png" />
+ <a href="https://github.com/orta/ORStackView/raw/master/web/tagged.png"><img align="left" width="160" src="https://github.com/orta/ORStackView/raw/master/web/tagged.png" /></a>
 
 ``` objc
 - (void)loadView
