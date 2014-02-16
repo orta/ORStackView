@@ -1,9 +1,9 @@
 //
 //  ORStackView.m
-//  ARAutoLayoutStackExample
+//  ORStackView
 //
 //  Created by Orta on 10/09/2013.
-//  Copyright (c) 2013 Orta. All rights reserved.
+//  Copyright (c) 2014 Orta. All rights reserved.
 //
 
 #import "ORStackView.h"
@@ -24,10 +24,10 @@
 {
     self = [super initWithFrame:frame];
     if (!self) return nil;
-    
+
     _viewStack = [NSMutableArray array];
     _bottomMarginHeight = NSNotFound;
-    
+
     return self;
 }
 
@@ -119,7 +119,7 @@
 {
     NSParameterAssert(view);
     if ([self.subviews containsObject:view]) return;
-    
+
     [super addSubview:view];
 
     StackView *stackView = [[StackView alloc] init];
@@ -142,6 +142,8 @@
     if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
 }
 
+#pragma mark Removal
+
 - (void)removeSubview:(UIView *)subview
 {
     if (![self.subviews containsObject:subview]) return;
@@ -157,6 +159,8 @@
     if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
 }
 
+#pragma mark Batching
+
 - (void)performBatchUpdates:(void (^)(void))updates;
 {
     NSParameterAssert(updates);
@@ -167,6 +171,25 @@
 
     [self setNeedsUpdateConstraints];
 }
+
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withTopMargin:(NSString *)margin
+{
+    [viewController willMoveToParentViewController:parentViewController];
+    [parentViewController addChildViewController:viewController];
+    [self addSubview:viewController.view withTopMargin:margin];
+    [viewController didMoveToParentViewController:parentViewController];
+}
+
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withTopMargin:(NSString *)margin sideMargin:(NSString *)sideMargin;
+{
+    [viewController willMoveToParentViewController:parentViewController];
+    [parentViewController addChildViewController:viewController];
+    [self addSubview:viewController.view withTopMargin:margin sideMargin:sideMargin];
+    [viewController didMoveToParentViewController:parentViewController];
+}
+
+
+#pragma mark Helper functions
 
 - (NSInteger)indexOfView:(UIView *)view
 {

@@ -1,6 +1,6 @@
 //
 //  ORStackView.h
-//  ARAutoLayoutStackExample
+//  ORStackView
 //
 //  Created by Orta on 10/09/2013.
 //  Copyright (c) 2013 Orta. All rights reserved.
@@ -18,6 +18,12 @@
 /// Adds a view to the heirarchy like addSubview:withTopMargin:
 /// will also center and apply side margins as insets from edge
 - (void)addSubview:(UIView *)view withTopMargin:(NSString *)topMargin sideMargin:(NSString *)sideMargin;
+
+/// Adds a view controller's view to the stack heirarchy
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withTopMargin:(NSString *)margin;
+
+/// Adds a view controller's view to the stack heirarchy, and applys edge insets
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withTopMargin:(NSString *)margin sideMargin:(NSString *)sideMargin;
 
 
 // Note: These indexes are not z-order, but stack order.
@@ -38,7 +44,7 @@
 /// Remove a subview from the Stack View
 - (void)removeSubview:(UIView *)subview;
 
-/// Perform insertion / removals without updaing the constraints
+/// Perform insertion / removals without updating the constraints
 - (void)performBatchUpdates:(void (^)(void))updates;
 
 

@@ -73,7 +73,7 @@ Optionally if you have views which should only appear once you've got confirmati
 
 ## Example Usage
 
-To run the example project; clone the repo, and run `pod install` from the Project directory first.
+`pod try ORStackView` or to run the example project; clone the repo, and run `pod install` from the Project directory.
 
 
 ## Installation
