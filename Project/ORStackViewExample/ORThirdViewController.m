@@ -18,9 +18,17 @@
 
 @implementation ORThirdViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)loadView
 {
     self.view = [[ORTagBasedAutoStackView alloc] init];
+
+    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
+        self.view.topLayoutGuide = self.topLayoutGuide;
+    }
 }
 
 - (void)viewDidLoad

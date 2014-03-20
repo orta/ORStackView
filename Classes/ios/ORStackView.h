@@ -59,6 +59,9 @@
 /// Setting this creates a bottom constraint letting the ORStackView set it's own height, defaults to NSNotFound
 @property (nonatomic, assign) CGFloat bottomMarginHeight;
 
+/// Settings this will create a constraint on the top view making the view sit below the layout guide (and the top margin)
+@property (nonatomic, strong) id<UILayoutSupport> topLayoutGuide;
+
 /// I'd prefer you to not use the UIView subview APIs please, things will break.
 - (void)addSubview:(UIView *)view __attribute__((unavailable("addSubview is not supported on ORStackView.")));
 
