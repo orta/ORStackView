@@ -44,6 +44,9 @@
 /// Remove a subview from the Stack View
 - (void)removeSubview:(UIView *)subview;
 
+/// Remove all subviews from the Stack View
+- (void)removeAllSubviews;
+
 /// Perform insertion / removals without updating the constraints
 - (void)performBatchUpdates:(void (^)(void))updates;
 

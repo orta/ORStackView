@@ -159,6 +159,16 @@
     if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
 }
 
+- (void)removeAllSubviews
+{
+    for (StackView *stackView in [self.viewStack copy]) {
+        [self.viewStack removeObject:stackView];
+        [stackView.view removeFromSuperview];
+    }
+
+    if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
+}
+
 #pragma mark Batching
 
 - (void)performBatchUpdates:(void (^)(void))updates;
