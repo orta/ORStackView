@@ -27,14 +27,27 @@
     self = [super init];
     if (!self) return self;
 
+    [self _loadStackView:klass];
+
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self _loadStackView:[ORStackView class]];
+    }
+
+    return self;
+}
+
+- (void)_loadStackView:(Class)klass {
     _stackView = [[klass alloc] init];
     _stackView.bottomMarginHeight = 0;
 
     [self addSubview:_stackView];
     [_stackView alignToView:self];
     [_stackView constrainWidthToView:self predicate:@""];
-
-    return self;
 }
 
 @end
