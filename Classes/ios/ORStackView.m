@@ -50,7 +50,15 @@
         NSInteger index = [self.viewStack indexOfObject:stackView];
 
         if (index == 0) {
-            stackView.topConstraint = [[view alignTopEdgeWithView:self predicate:predicate] lastObject];
+            if (self.topLayoutGuide) {
+                id topLayoutGuide = self.topLayoutGuide;
+                NSString *vhl = [NSString stringWithFormat:@"V:[topLayoutGuide]-%@-[view]", predicate];
+                NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:vhl options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(view, topLayoutGuide)];
+                [self addConstraints:constraints];
+                stackView.topConstraint = [constraints firstObject];
+            } else {
+                stackView.topConstraint = [[view alignTopEdgeWithView:self predicate:predicate] lastObject];
+            }
         } else {
 
             UIView *viewAbove = [self.viewStack[index - 1] view];
@@ -224,6 +232,13 @@
 - (UIView *)lastView
 {
     return [[self.viewStack lastObject] view];
+}
+
+#pragma mark - Layout Guides
+
+- (void)setTopLayoutGuide:(id<UILayoutSupport>)topLayoutGuide {
+    _topLayoutGuide = topLayoutGuide;
+    [self needsUpdateConstraints];
 }
 
 @end

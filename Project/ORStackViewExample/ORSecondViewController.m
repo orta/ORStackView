@@ -18,9 +18,17 @@
 
 @implementation ORSecondViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)loadView
 {
     self.view = [[ORStackView alloc] init];
+
+    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
+        self.view.topLayoutGuide = self.topLayoutGuide;
+    }
 }
 
 - (void)viewDidLoad
