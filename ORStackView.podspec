@@ -1,15 +1,16 @@
 Pod::Spec.new do |s|
   s.name         = "ORStackView"
-  s.version      = "1.0.0"
-  s.summary      = "An Auto Layout based Stack View"
+  s.version      = "1.1.0"
+  s.summary      = "An Auto Layout based Stack View."
   s.description  = <<-DESC
                     Vertically stack views using Auto Layout, also includes an 
                     order specific subclass that uses view tags for ordering.
                    DESC
-  s.homepage     = "http://github.com/orta/ORStackView"
+  s.homepage     = "https://github.com/orta/ORStackView"
   
   s.license      = 'MIT'
   s.author       = { "Orta Therox" => "orta.therox@gmail.com" }
+  s.social_media_url = "http://twitter.com/orta"
   s.source       = { :git => "https://github.com/orta/ORStackView.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '6.0'
