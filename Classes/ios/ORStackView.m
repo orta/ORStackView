@@ -40,7 +40,7 @@
 {
     // Remove all constraints
     for (StackView *stackView in self.viewStack) {
-        [stackView.view removeConstraint:stackView.topConstraint];
+        [self removeConstraint:stackView.topConstraint];
     }
 
     // Add the new constraints
