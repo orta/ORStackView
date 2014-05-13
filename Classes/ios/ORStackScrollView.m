@@ -1,6 +1,6 @@
 //
 //  ORStackScrollView.m
-//  ARAutoLayoutStackExample
+//  ORStackView
 //
 //  Created by Orta on 10/09/2013.
 //  Copyright (c) 2013 Orta. All rights reserved.
