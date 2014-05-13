@@ -33,36 +33,52 @@
 
 - (void)viewDidLoad
 {
-    ORColourView *title = [[ORColourView alloc] init];
-    title.text = @"1 Title";
-    title.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
-    title.tag = 1;
+    ORColourView *view1 = [[ORColourView alloc] init];
+    view1.text = @"1 Title - Tap to add view #2";
+    view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
+    view1.tag = 1;
 
-    ORColourView *subtitle = [[ORColourView alloc] init];
-    subtitle.text = @"2 Subtitle";
-    subtitle.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
-    subtitle.tag = 2;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
+    [view1 addGestureRecognizer:tapGesture];
 
-    ORColourView *content = [[ORColourView alloc] init];
-    content.text = @"3 Lorem ipsum, etc. etc.";
-    content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
-    content.tag = 3;
+    ORColourView *view3 = [[ORColourView alloc] init];
+    view3.text = @"3 Lorem ipsum, etc. etc.";
+    view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60 };
+    view3.tag = 3;
 
-    ORColourView *content2 = [[ORColourView alloc] init];
-    content2.text = @"4 Lorem ipsum, etc. etc.";
-    content2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
-    content2.tag = 4;
+    ORColourView *view4 = [[ORColourView alloc] init];
+    view4.text = @"4 Lorem ipsum, etc. etc.";
+    view4.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50 };
+    view4.tag = 4;
 
-    ORColourView *content3 = [[ORColourView alloc] init];
-    content3.text = @"5 Lorem ipsum, etc. etc.";
-    content3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
-    content3.tag = 5;
+    ORColourView *view5 = [[ORColourView alloc] init];
+    view5.text = @"5 Lorem ipsum, etc. etc.";
+    view5.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60 };
+    view5.tag = 5;
 
-    [self.view addSubview:subtitle withTopMargin:@"10" sideMargin:@"70"];
-    [self.view addSubview:content withTopMargin:@"20" sideMargin:@"20"];
-    [self.view addSubview:content3 withTopMargin:@"20" sideMargin:@"20"];
-    [self.view addSubview:content2 withTopMargin:@"10" sideMargin:@"20"];
-    [self.view addSubview:title withTopMargin:@"20" sideMargin:@"30"];
+    [self.view addSubview:view3 withTopMargin:@"10" sideMargin:@"40"];
+    [self.view addSubview:view5 withTopMargin:@"20" sideMargin:@"20"];
+    [self.view addSubview:view4 withTopMargin:@"10" sideMargin:@"20"];
+    [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
 }
 
+- (void)addView
+{
+    if ([[self.view.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"tag = 2"]] count] > 0) return;
+
+    ORColourView *view2 = [[ORColourView alloc] init];
+    view2.text = @"2 Subtitle - Tap To Remove";
+    view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
+    view2.tag = 2;
+
+    [self.view addSubview:view2 withTopMargin:@"10" sideMargin:@"70"];
+
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
+    [view2 addGestureRecognizer:tapGesture];
+}
+
+- (void)removeTappedView:(UITapGestureRecognizer *)gesture
+{
+    [self.view removeSubview:gesture.view];
+}
 @end
