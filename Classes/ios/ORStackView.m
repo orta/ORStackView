@@ -136,14 +136,22 @@
     [self.viewStack insertObject:stackView atIndex:index];
 
     if (centered) {
-        NSString *invertedSideMargin = nil;
-        if ([sideMargin rangeOfString:@"-"].location == NSNotFound) {
-            invertedSideMargin = [@"-" stringByAppendingString:sideMargin];
+        NSMutableString *mutableSideMargin = sideMargin;
+        if ([mutableSideMargin rangeOfString:@"-"].location == NSNotFound) {
+            NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@"[0-9]" options:0 error:NULL];
+            NSInteger *matchLocation = [regex rangeOfFirstMatchInString:mutableSideMargin options:nil range:NSMakeRange(0, [mutableSideMargin length])].location;
+            [mutableSideMargin insertString:@"-" atIndex:matchLocation];
         } else {
-            invertedSideMargin = [sideMargin stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            mutableSideMargin = [mutableSideMargin stringByReplacingOccurrencesOfString:@"-" withString:@""];
         }
 
-        [view constrainWidthToView:self predicate:invertedSideMargin];
+        if ([mutableSideMargin rangeOfString:@">"].location != NSNotFound) {
+            mutableSideMargin = [mutableSideMargin stringByReplacingOccurrencesOfString:@">" withString:@"<"];
+        } else if ([mutableSideMargin rangeOfString:@"<"].location != NSNotFound) {
+            mutableSideMargin = [mutableSideMargin stringByReplacingOccurrencesOfString:@"<" withString:@">"];
+        }
+
+        [view constrainWidthToView:self predicate:[mutableSideMargin copy]];
         [view alignCenterXWithView:self predicate:nil];
     }
 
