@@ -28,11 +28,11 @@
     splitView.backgroundColor = [UIColor purpleColor];
     ORColourView *left1 = [[ORColourView alloc] init];
     left1.text = @"Tap Me";
-    left1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 30};
+    left1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
 
     ORColourView *right1 = [[ORColourView alloc] init];
     right1.text = @"Tap Me";
-    right1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20};
+    right1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60};
 
     UITapGestureRecognizer *leftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView:)];
     [left1 addGestureRecognizer:leftGesture];
@@ -40,16 +40,16 @@
     [right1 addGestureRecognizer:rightGesture];
 
     ORColourView *left2 = [[ORColourView alloc] init];
-    left2.text = @"a view";
-    left2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
+    left2.text = @"ORSplitStackView is a view containing two stack views.";
+    left2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 90};
 
     ORColourView *left3 = [[ORColourView alloc] init];
-    left3.text = @"a view";
-    left3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 25};
+    left3.text = @"ORSplitStackView adjusts its height to fit its content";
+    left3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 75};
 
     ORColourView *right2 = [[ORColourView alloc] init];
     right2.text = @"a view";
-    right2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 25};
+    right2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 45};
 
     ORColourView *right3 = [[ORColourView alloc] init];
     right3.text = @"a view";

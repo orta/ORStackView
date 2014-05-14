@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     ORColourView *view1 = [[ORColourView alloc] init];
-    view1.text = @"ORTagBasedAutoStackView\nTap Me\ntag = 1";
+    view1.text = @"Tap Me\ntag = 1";
     view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 70};
     view1.tag = 1;
 
@@ -42,7 +42,7 @@
     [view1 addGestureRecognizer:tapGesture];
 
     ORColourView *view2 = [[ORColourView alloc] init];
-    view2.text = @"ORTagBasedAutoStackView uses view tags to order your subviews\ntag=2";
+    view2.text = @"ORTagBasedAutoStackView uses view tags to order your subviews\ntag = 2";
     view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 70 };
     view2.tag = 2;
 

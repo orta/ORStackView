@@ -136,22 +136,24 @@
     [self.viewStack insertObject:stackView atIndex:index];
 
     if (centered) {
-        NSMutableString *mutableSideMargin = [sideMargin mutableCopy];
-        if ([mutableSideMargin rangeOfString:@"-"].location == NSNotFound) {
+        NSString *newSidemargin;
+        if ([sideMargin rangeOfString:@"-"].location == NSNotFound) {
+            NSMutableString *mutableSideMargin = [sideMargin mutableCopy];
             NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@"[0-9]" options:0 error:NULL];
-            NSInteger *matchLocation = [regex rangeOfFirstMatchInString:mutableSideMargin options:nil range:NSMakeRange(0, [mutableSideMargin length])].location;
+            NSInteger matchLocation = [regex rangeOfFirstMatchInString:mutableSideMargin options:0 range:NSMakeRange(0, [mutableSideMargin length])].location;
             [mutableSideMargin insertString:@"-" atIndex:matchLocation];
+            newSidemargin = [mutableSideMargin copy];
         } else {
-            mutableSideMargin = [mutableSideMargin stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            newSidemargin = [sideMargin stringByReplacingOccurrencesOfString:@"-" withString:@""];
         }
 
-        if ([mutableSideMargin rangeOfString:@">"].location != NSNotFound) {
-            mutableSideMargin = [mutableSideMargin stringByReplacingOccurrencesOfString:@">" withString:@"<"];
-        } else if ([mutableSideMargin rangeOfString:@"<"].location != NSNotFound) {
-            mutableSideMargin = [mutableSideMargin stringByReplacingOccurrencesOfString:@"<" withString:@">"];
+        if ([newSidemargin rangeOfString:@">"].location != NSNotFound) {
+            newSidemargin = [newSidemargin stringByReplacingOccurrencesOfString:@">" withString:@"<"];
+        } else if ([newSidemargin rangeOfString:@"<"].location != NSNotFound) {
+            newSidemargin = [newSidemargin stringByReplacingOccurrencesOfString:@"<" withString:@">"];
         }
 
-        [view constrainWidthToView:self predicate:[mutableSideMargin copy]];
+        [view constrainWidthToView:self predicate:newSidemargin];
         [view alignCenterXWithView:self predicate:nil];
     }
 

@@ -30,15 +30,35 @@
 {
 
     ORColourView *view1 = [[ORColourView alloc] init];
-    view1.text = @"An ORStackView containing an ORSplitStackView";
-    view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60};
+    view1.text = @"Stack views can be nested inside stack views.";
+    view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100};
 
-    ORSplitStackView *view2 = [[ORSplitStackView alloc] initWithLeftPredicate:@"155" rightPredicate:@"130"];
+    ORColourView *view2 = [[ORColourView alloc] init];
+    view2.text = @"This is an ORStackScrollView containing an ORSplitStackView.";
+    view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 80};
 
-    view2.backgroundColor = [UIColor purpleColor];
+    ORColourView *view3 = [[ORColourView alloc] init];
+    view3.text = @"a view";
+    view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
+
+    ORSplitStackView *view4 = [[ORSplitStackView alloc] initWithLeftPredicate:@"155" rightPredicate:@"130"];
+    view4.backgroundColor = [UIColor purpleColor];
+
+    ORColourView *view5 = [[ORColourView alloc] init];
+    view5.text = @"a view";
+    view5.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
+
+    ORColourView *view6 = [[ORColourView alloc] init];
+    view6.text = @"a view";
+    view6.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60};
+
+    ORColourView *view7 = [[ORColourView alloc] init];
+    view7.text = @"a view";
+    view7.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
+
     ORColourView *left1 = [[ORColourView alloc] init];
     left1.text = @"Tap Me";
-    left1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 30};
+    left1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 55};
 
     ORColourView *right1 = [[ORColourView alloc] init];
     right1.text = @"Tap Me";
@@ -51,34 +71,34 @@
 
     ORColourView *left2 = [[ORColourView alloc] init];
     left2.text = @"a view";
-    left2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
+    left2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
     ORColourView *left3 = [[ORColourView alloc] init];
     left3.text = @"a view";
-    left3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 25};
+    left3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 45};
 
     ORColourView *right2 = [[ORColourView alloc] init];
     right2.text = @"a view";
-    right2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 25};
+    right2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 35};
 
     ORColourView *right3 = [[ORColourView alloc] init];
     right3.text = @"a view";
-    right3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
+    right3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
 
-    [view2.leftStack addSubview:left1 withTopMargin:@"0" sideMargin:@"10"];
-    [view2.leftStack addSubview:left2 withTopMargin:@"10" sideMargin:@"5"];
-    [view2.leftStack addSubview:left3 withTopMargin:@"10" sideMargin:@"15"];
-    [view2.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
-    [view2.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
-    [view2.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
+    [view4.leftStack addSubview:left1 withTopMargin:@"0" sideMargin:@"10"];
+    [view4.leftStack addSubview:left2 withTopMargin:@"10" sideMargin:@"5"];
+    [view4.leftStack addSubview:left3 withTopMargin:@"10" sideMargin:@"15"];
+    [view4.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
+    [view4.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
+    [view4.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
 
-    ORColourView *bottomView = [[ORColourView alloc] init];
-    bottomView.text = @"ORSplitStackView (above) adjusts its height to fit its content";
-    bottomView.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
-
-    [self.view.stackView addSubview:view1 withTopMargin:@"20" sideMargin:@"10"];
-    [self.view.stackView addSubview:view2 withTopMargin:@"15" sideMargin:@"30"];
-    [self.view.stackView addSubview:bottomView withTopMargin:@"10" sideMargin:@"20"];
+    [self.view.stackView addSubview:view1 withTopMargin:@"20" sideMargin:@"40"];
+    [self.view.stackView addSubview:view2 withTopMargin:@"10" sideMargin:@"30"];
+    [self.view.stackView addSubview:view3 withTopMargin:@"10" sideMargin:@"35"];
+    [self.view.stackView addSubview:view4 withTopMargin:@"15" sideMargin:@"30"];
+    [self.view.stackView addSubview:view5 withTopMargin:@"20" sideMargin:@"15"];
+    [self.view.stackView addSubview:view6 withTopMargin:@"10" sideMargin:@"20"];
+    [self.view.stackView addSubview:view7 withTopMargin:@"15" sideMargin:@"30"];
 
 }
 
@@ -86,7 +106,7 @@
 {
     ORColourView *view = [[ORColourView alloc] init];
     view.text = @"Tap to remove";
-    view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
+    view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40 };
     [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:@"5" sideMargin:@"10"];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
