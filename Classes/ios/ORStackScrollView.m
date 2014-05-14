@@ -47,7 +47,6 @@
 
     [self addSubview:_stackView];
     [_stackView alignToView:self];
-    [_stackView constrainWidthToView:self predicate:@""];
 }
 
 @end

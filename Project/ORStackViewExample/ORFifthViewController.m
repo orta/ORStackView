@@ -1,16 +1,21 @@
 //
-//  ORFourthViewController.m
+//  ORFifthViewController.m
 //  ORStackViewExample
 //
 //  Created by Laura Brown on 5/13/14.
 //  Copyright (c) 2014 Orta. All rights reserved.
 //
 
-#import "ORFourthViewController.h"
+#import "ORFifthViewController.h"
 #import "ORColourView.h"
 #import <ORStackView/ORSplitStackView.h>
+#import <ORStackView/ORStackScrollView.h>
 
-@implementation ORFourthViewController
+@interface ORFifthViewController ()
+@property (nonatomic, strong) ORStackScrollView *view;
+@end
+
+@implementation ORFifthViewController
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -18,14 +23,19 @@
 
 - (void)loadView
 {
-    self.view = [[UIView alloc] init];
+    self.view = [[ORStackScrollView alloc] initWithStackViewClass:[ORStackView class]];
 }
 
 - (void)viewDidLoad
 {
-    ORSplitStackView *splitView = [[ORSplitStackView alloc] initWithLeftPredicate:@"155" rightPredicate:@"130"];
 
-    splitView.backgroundColor = [UIColor purpleColor];
+    ORColourView *view1 = [[ORColourView alloc] init];
+    view1.text = @"An ORStackView containing an ORSplitStackView";
+    view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60};
+
+    ORSplitStackView *view2 = [[ORSplitStackView alloc] initWithLeftPredicate:@"155" rightPredicate:@"130"];
+
+    view2.backgroundColor = [UIColor purpleColor];
     ORColourView *left1 = [[ORColourView alloc] init];
     left1.text = @"Tap Me";
     left1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 30};
@@ -55,18 +65,20 @@
     right3.text = @"a view";
     right3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
-    [splitView.leftStack addSubview:left1 withTopMargin:@"0" sideMargin:@"10"];
-    [splitView.leftStack addSubview:left2 withTopMargin:@"10" sideMargin:@"5"];
-    [splitView.leftStack addSubview:left3 withTopMargin:@"10" sideMargin:@"15"];
-    [splitView.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
-    [splitView.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
-    [splitView.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
+    [view2.leftStack addSubview:left1 withTopMargin:@"0" sideMargin:@"10"];
+    [view2.leftStack addSubview:left2 withTopMargin:@"10" sideMargin:@"5"];
+    [view2.leftStack addSubview:left3 withTopMargin:@"10" sideMargin:@"15"];
+    [view2.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
+    [view2.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
+    [view2.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
 
-    [self.view addSubview:splitView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
-    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
-    }
+    ORColourView *bottomView = [[ORColourView alloc] init];
+    bottomView.text = @"ORSplitStackView (above) adjusts its height to fit its content";
+    bottomView.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
+
+    [self.view.stackView addSubview:view1 withTopMargin:@"20" sideMargin:@"10"];
+    [self.view.stackView addSubview:view2 withTopMargin:@"15" sideMargin:@"30"];
+    [self.view.stackView addSubview:bottomView withTopMargin:@"10" sideMargin:@"20"];
 
 }
 

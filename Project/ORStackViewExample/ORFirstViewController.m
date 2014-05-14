@@ -33,24 +33,24 @@
 
 - (void)viewDidLoad
 {
-    ORColourView *title = [[ORColourView alloc] init];
-    title.text = @"Title - Tap Me";
-    title.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
+    ORColourView *view1 = [[ORColourView alloc] init];
+    view1.text = @"ORStackView - Tap Me";
+    view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
-    [title addGestureRecognizer:tapGesture];
+    [view1 addGestureRecognizer:tapGesture];
 
-    ORColourView *subtitle = [[ORColourView alloc] init];
-    subtitle.text = @"Subtitle";
-    subtitle.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
+    ORColourView *view2 = [[ORColourView alloc] init];
+    view2.text = @"Subtitle";
+    view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
 
-    ORColourView *content = [[ORColourView alloc] init];
-    content.text = @"Lorem ipsum, etc. etc.";
-    content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
+    ORColourView *view3 = [[ORColourView alloc] init];
+    view3.text = @"By default, new subviews are added to the bottom of the stack view.";
+    view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
-    [self.view addSubview:title withTopMargin:@"20" sideMargin:@"30"];
-    [self.view addSubview:subtitle withTopMargin:@"10" sideMargin:@"70"];
-    [self.view addSubview:content withTopMargin:@"60" sideMargin:@"20"];
+    [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
+    [self.view addSubview:view2 withTopMargin:@"40" sideMargin:@"70"];
+    [self.view addSubview:view3 withTopMargin:@"30" sideMargin:@"20"];
 }
 
 - (void)addView

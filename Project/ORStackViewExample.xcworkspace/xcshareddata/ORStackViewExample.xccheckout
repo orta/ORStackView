@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>65C7EF6C-522F-45AB-9B98-8FB307AC7A92</string>
+	<string>139A4C4C-A935-4E3F-ADA6-10194BD6F960</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ORStackViewExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0F8053D2-052E-418D-B567-1E9909157CC6</key>
-		<string>https://github.com/orta/ORStackView.git</string>
+		<key>F8E74E61-7846-479D-9117-01817D911692</key>
+		<string>ssh://github.com/1aurabrown/ORStackView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Project/ORStackViewExample.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0F8053D2-052E-418D-B567-1E9909157CC6</key>
+		<key>F8E74E61-7846-479D-9117-01817D911692</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/orta/ORStackView.git</string>
+	<string>ssh://github.com/1aurabrown/ORStackView.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0F8053D2-052E-418D-B567-1E9909157CC6</string>
+	<string>F8E74E61-7846-479D-9117-01817D911692</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0F8053D2-052E-418D-B567-1E9909157CC6</string>
+			<string>F8E74E61-7846-479D-9117-01817D911692</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ORStackView</string>
 		</dict>
