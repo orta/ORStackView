@@ -46,7 +46,6 @@
     view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 70 };
     view2.tag = 2;
 
-
     ORColourView *view4 = [[ORColourView alloc] init];
     view4.text = @"tag = 4";
     view4.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50 };

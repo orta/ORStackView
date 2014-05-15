@@ -55,13 +55,13 @@
 
 - (void)addView
 {
-    ORColourView *content = [[ORColourView alloc] init];
-    content.text = @"Tap to remove";
-    content.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-    [self.view addSubview:content withTopMargin:@"5" sideMargin:@"40"];
+    ORColourView *view = [[ORColourView alloc] init];
+    view.text = @"Tap to remove";
+    view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
+    [self.view addSubview:view withTopMargin:@"5" sideMargin:@"40"];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
-    [content addGestureRecognizer:tapGesture];
+    [view addGestureRecognizer:tapGesture];
 }
 
 - (void)removeTappedView:(UITapGestureRecognizer *)gesture

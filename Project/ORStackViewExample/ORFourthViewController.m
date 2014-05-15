@@ -24,7 +24,12 @@
 - (void)viewDidLoad
 {
     ORSplitStackView *splitView = [[ORSplitStackView alloc] initWithLeftPredicate:@"155" rightPredicate:@"130"];
-
+    [self.view addSubview:splitView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
+    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    }
+    
     splitView.backgroundColor = [UIColor purpleColor];
     ORColourView *left1 = [[ORColourView alloc] init];
     left1.text = @"Tap Me";
@@ -61,13 +66,6 @@
     [splitView.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
     [splitView.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
     [splitView.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
-
-    [self.view addSubview:splitView];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
-    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
-    }
-
 }
 
 - (void)addView:(UITapGestureRecognizer *)gesture
