@@ -45,7 +45,7 @@
     view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
 
     ORColourView *view3 = [[ORColourView alloc] init];
-    view3.text = @"By default, new subviews are added to the bottom of the stack view.";
+    view3.text = @"By default, new subviews are added to the bottom of ORStackView.";
     view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
     [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];

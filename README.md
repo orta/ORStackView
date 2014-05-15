@@ -7,11 +7,12 @@ Makes setting up a collection of stacked views simple.
 Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
 
 
+
 ### ORStackView
 
 You can create an ORStackView and simply add subviews to it in the order in which you'd like them to appear. New subviews are added to the bottom of the ORStackView. In the this example, tapping the first subview will add a new subview to the bottom of the stack.
 
- <a href="https://github.com/orta/ORStackView/raw/master/web/simple.png"><img align="left" width="160" src="https://github.com/orta/ORStackView/raw/master/web/simple.png" /></a>
+<a href="https://github.com/1aurabrown/ORStackView/tree/split/web/simple1.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/simple1.png" /></a> <a href="https://github.com/1aurabrown/ORStackView/tree/split/web/simple2.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/simple2.png" /></a>
 
 ```objc
 - (void)loadView
@@ -25,7 +26,8 @@ You can create an ORStackView and simply add subviews to it in the order in whic
   view1.text = @"ORStackView - Tap Me";
   view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
-  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] 
+    initWithTarget:self action:@selector(addView)];
   [view1 addGestureRecognizer:tapGesture];
 
   ORColourView *view2 = [[ORColourView alloc] init];
@@ -33,7 +35,7 @@ You can create an ORStackView and simply add subviews to it in the order in whic
   view2.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
 
   ORColourView *view3 = [[ORColourView alloc] init];
-  view3.text = @"By default, new subviews are added to the bottom of the stack view.";
+  view3.text = @"By default, new subviews are added to the bottom of ORStackView.";
   view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
   [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
@@ -50,11 +52,15 @@ You can create an ORStackView and simply add subviews to it in the order in whic
 }
 ```
 
+
+
 ### ORStackView with ordering
 
 If you have views which should only appear once you've got confirmation from an external source, you can add your subviews using `insertSubview:atIndex:withTopMargin:`, `insertSubview:atIndex:withTopMargin:sideMargin:`, `insertSubview:belowSubview:withTopMargin:` or `insertSubview:aboveSubview:withTopMargin:`
 
 In this example, subviews appear in a different order than they are added chronologically. Tapping the first subview adds a new subview to the middle of the stack. 
+
+<a href="https://github.com/1aurabrown/ORStackView/tree/split/web/ordered1.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/ordered1.png" /></a> <a href="https://github.com/1aurabrown/ORStackView/tree/split/web/ordered2.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/ordered2.png" /></a>
 
 ```objc
 - (void)loadView
@@ -68,7 +74,7 @@ In this example, subviews appear in a different order than they are added chrono
   view1.text = @"1 - ORStackView - Tap Me";
   view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
   UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] 
-      initWithTarget:self action:@selector(addView)];
+    initWithTarget:self action:@selector(addView)];
   [view1 addGestureRecognizer:tapGesture];
 
   ORColourView *view2 = [[ORColourView alloc] init];
@@ -98,11 +104,13 @@ In this example, subviews appear in a different order than they are added chrono
 }
 ```
 
+
+
 ### ORTagBasedAutoStackView
 
  Another option is to use ORTagBasedAutoStackView to order your subviews visually in a different order than you will be adding them chronologically. ORTagBasedAutoStackView uses view tags to specify the order in which views will appear from top to bottom. For example these views will be ordered correctly regardless of the insertion order chronologically. Tapping the first view adds a new view with a `tag` of `3` to the middle of the stack.
 
- <a href="https://github.com/orta/ORStackView/raw/master/web/tagged.png"><img align="left" width="160" src="https://github.com/orta/ORStackView/raw/master/web/tagged.png" /></a>
+<a href="https://github.com/1aurabrown/ORStackView/tree/split/web/tagged1.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/tagged1.png" /></a> <a href="https://github.com/1aurabrown/ORStackView/tree/split/web/tagged2.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/tagged2.png" /></a>
 
 ```objc
 - (void)loadView
@@ -117,7 +125,8 @@ In this example, subviews appear in a different order than they are added chrono
   view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 70};
   view1.tag = 1;
 
-  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView)];
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] 
+    initWithTarget:self action:@selector(addView)];
   [view1 addGestureRecognizer:tapGesture];
 
   ORColourView *view2 = [[ORColourView alloc] init];
@@ -154,9 +163,12 @@ In this example, subviews appear in a different order than they are added chrono
 }
 ```
 
+
 ### ORSplitStackView
 
-ORSplitStackView is a view containing two ORStackView columns. You can add subviews to the `leftStack` and `rightStack` views as you normally would. ORSplitStackView adjusts its height to fit the taller of the two stack views.
+ORSplitStackView is a view containing two ORStackView columns. Add subviews to the `leftStack` and `rightStack` views. ORSplitStackView adjusts its height to fit the taller of the two stack views.
+
+<a href="https://github.com/1aurabrown/ORStackView/tree/split/web/split1.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/split1.png" /></a> <a href="https://github.com/1aurabrown/ORStackView/tree/split/web/split2.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/split2.png" /></a>
 
 ```objc
 - (void)loadView
@@ -182,9 +194,11 @@ ORSplitStackView is a view containing two ORStackView columns. You can add subvi
   right1.text = @"Tap Me";
   right1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60};
 
-  UITapGestureRecognizer *leftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView:)];
+  UITapGestureRecognizer *leftGesture = [[UITapGestureRecognizer alloc] 
+    initWithTarget:self action:@selector(addView:)];
   [left1 addGestureRecognizer:leftGesture];
-  UITapGestureRecognizer *rightGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addView:)];
+  UITapGestureRecognizer *rightGesture = [[UITapGestureRecognizer alloc] 
+    initWithTarget:self action:@selector(addView:)];
   [right1 addGestureRecognizer:rightGesture];
 
   ORColourView *left2 = [[ORColourView alloc] init];
@@ -217,14 +231,12 @@ ORSplitStackView is a view containing two ORStackView columns. You can add subvi
   view.text = @"Tap to remove";
   view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
   [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:@"5" sideMargin:@"10"];
-
 }
 ``` 
 
 ## Example Usage
 
 `pod try ORStackView` or to run the example project; clone the repo, and run `pod install` from the Project directory.
-
 
 ## Installation
 
