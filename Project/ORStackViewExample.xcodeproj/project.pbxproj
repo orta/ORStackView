@@ -19,6 +19,8 @@
 		604D944317BCD45900E331B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604D944217BCD45900E331B1 /* Images.xcassets */; };
 		604D946117BCE93500E331B1 /* ORColourView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D946017BCE93500E331B1 /* ORColourView.m */; };
 		6070C4B217DF51250091D918 /* ORThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6070C4B117DF51250091D918 /* ORThirdViewController.m */; };
+		E66861CF1922AB2F0017091C /* ORFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66861CE1922AB2F0017091C /* ORFifthViewController.m */; };
+		E69A735A1923F7F50061C631 /* ORFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69A73591923F7F50061C631 /* ORFourthViewController.m */; };
 		F60BF2053A5B4CE190BA41D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 272807D13A5B45F284048323 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,10 @@
 		604D946017BCE93500E331B1 /* ORColourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORColourView.m; sourceTree = "<group>"; };
 		6070C4B017DF51250091D918 /* ORThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORThirdViewController.h; sourceTree = "<group>"; };
 		6070C4B117DF51250091D918 /* ORThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORThirdViewController.m; sourceTree = "<group>"; };
+		E66861CD1922AB2F0017091C /* ORFifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORFifthViewController.h; sourceTree = "<group>"; };
+		E66861CE1922AB2F0017091C /* ORFifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORFifthViewController.m; sourceTree = "<group>"; };
+		E69A73581923F7F50061C631 /* ORFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORFourthViewController.h; sourceTree = "<group>"; };
+		E69A73591923F7F50061C631 /* ORFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORFourthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				604D944017BCD45900E331B1 /* ORSecondViewController.m */,
 				6070C4B017DF51250091D918 /* ORThirdViewController.h */,
 				6070C4B117DF51250091D918 /* ORThirdViewController.m */,
+				E69A73581923F7F50061C631 /* ORFourthViewController.h */,
+				E69A73591923F7F50061C631 /* ORFourthViewController.m */,
+				E66861CD1922AB2F0017091C /* ORFifthViewController.h */,
+				E66861CE1922AB2F0017091C /* ORFifthViewController.m */,
 			);
 			name = "Example View Controllers";
 			sourceTree = "<group>";
@@ -246,8 +256,10 @@
 				604D943417BCD45900E331B1 /* main.m in Sources */,
 				604D943817BCD45900E331B1 /* ORAppDelegate.m in Sources */,
 				6070C4B217DF51250091D918 /* ORThirdViewController.m in Sources */,
+				E69A735A1923F7F50061C631 /* ORFourthViewController.m in Sources */,
 				604D943E17BCD45900E331B1 /* ORFirstViewController.m in Sources */,
 				604D946117BCE93500E331B1 /* ORColourView.m in Sources */,
+				E66861CF1922AB2F0017091C /* ORFifthViewController.m in Sources */,
 				604D944117BCD45900E331B1 /* ORSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
