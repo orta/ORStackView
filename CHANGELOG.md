@@ -1,5 +1,11 @@
 # ORStackView CHANGELOG
 
+## 1.2.0
+
+* Added ORSplitStackView - @1aurabrown
+* Removes stale constraints with tag ordering at runtime - @1aurabrown
+* Support for resizable height / margin constraings - @1aurabrown
+
 ## 1.1.0
 
 * Allow ORStackScrollViews to be created via nibs - @kylef
