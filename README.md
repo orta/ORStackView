@@ -1,5 +1,6 @@
 # ORStackView
 
+[![Build Status](https://travis-ci.org/orta/ORStackView.svg)](https://travis-ci.org/orta/ORStackView)
 [![Version](http://cocoapod-badges.herokuapp.com/v/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
 
@@ -26,7 +27,7 @@ You can create an ORStackView and simply add subviews to it in the order in whic
   view1.text = @"ORStackView - Tap Me";
   view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
-  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] 
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
     initWithTarget:self action:@selector(addView)];
   [view1 addGestureRecognizer:tapGesture];
 
@@ -58,7 +59,7 @@ You can create an ORStackView and simply add subviews to it in the order in whic
 
 If you have views which should only appear once you've got confirmation from an external source, you can add your subviews using `insertSubview:atIndex:withTopMargin:`, `insertSubview:atIndex:withTopMargin:sideMargin:`, `insertSubview:belowSubview:withTopMargin:` or `insertSubview:aboveSubview:withTopMargin:`
 
-In this example, subviews appear in a different order than they are added chronologically. Tapping the first subview adds a new subview to the middle of the stack. 
+In this example, subviews appear in a different order than they are added chronologically. Tapping the first subview adds a new subview to the middle of the stack.
 
 <a href="https://github.com/1aurabrown/ORStackView/tree/split/web/ordered1.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/ordered1.png" /></a> <a href="https://github.com/1aurabrown/ORStackView/tree/split/web/ordered2.png"><img width="360" src="https://raw.githubusercontent.com/1aurabrown/ORStackView/split/web/ordered2.png" /></a>
 
@@ -73,7 +74,7 @@ In this example, subviews appear in a different order than they are added chrono
   ORColourView *view1 = [[ORColourView alloc] init];
   view1.text = @"1 - ORStackView - Tap Me";
   view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
-  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] 
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
     initWithTarget:self action:@selector(addView)];
   [view1 addGestureRecognizer:tapGesture];
 
@@ -125,7 +126,7 @@ In this example, subviews appear in a different order than they are added chrono
   view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 70};
   view1.tag = 1;
 
-  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] 
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
     initWithTarget:self action:@selector(addView)];
   [view1 addGestureRecognizer:tapGesture];
 
@@ -184,7 +185,7 @@ ORSplitStackView is a view containing two ORStackView columns. Add subviews to t
   if ([self respondsToSelector:@selector(topLayoutGuide)]) {
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:splitView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
   }
-    
+
   splitView.backgroundColor = [UIColor purpleColor];
   ORColourView *left1 = [[ORColourView alloc] init];
   left1.text = @"Tap Me";
@@ -194,10 +195,10 @@ ORSplitStackView is a view containing two ORStackView columns. Add subviews to t
   right1.text = @"Tap Me";
   right1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60};
 
-  UITapGestureRecognizer *leftGesture = [[UITapGestureRecognizer alloc] 
+  UITapGestureRecognizer *leftGesture = [[UITapGestureRecognizer alloc]
     initWithTarget:self action:@selector(addView:)];
   [left1 addGestureRecognizer:leftGesture];
-  UITapGestureRecognizer *rightGesture = [[UITapGestureRecognizer alloc] 
+  UITapGestureRecognizer *rightGesture = [[UITapGestureRecognizer alloc]
     initWithTarget:self action:@selector(addView:)];
   [right1 addGestureRecognizer:rightGesture];
 
@@ -232,7 +233,7 @@ ORSplitStackView is a view containing two ORStackView columns. Add subviews to t
   view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
   [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:@"5" sideMargin:@"10"];
 }
-``` 
+```
 
 ## Example Usage
 
