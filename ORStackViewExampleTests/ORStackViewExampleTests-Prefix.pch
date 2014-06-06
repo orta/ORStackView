@@ -1,0 +1,27 @@
+//
+//  ORStackViewExampleTests-Prefix.pch
+//  ORStackViewExample
+//
+//  Created by Daniel Doubrovkine on 6/6/14.
+//  Copyright (c) 2014 Orta. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#define EXP_SHORTHAND
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
+#import <EXPMatchers+FBSnapshotTest/EXPMatchers+FBSnapshotTest.h>
+
+#import <OCMock/OCMock.h>
+
+#endif
