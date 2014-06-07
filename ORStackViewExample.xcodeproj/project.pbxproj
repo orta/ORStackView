@@ -16,6 +16,7 @@
 		3C9C9552194250CD00DEA440 /* ORFifthViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C9551194250CD00DEA440 /* ORFifthViewControllerTests.m */; };
 		3C9C9554194259D300DEA440 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9C9553194259D300DEA440 /* Foundation.framework */; };
 		3C9C9556194259DB00DEA440 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9C9555194259DB00DEA440 /* UIKit.framework */; };
+		3C9C955A1942661500DEA440 /* ORStackViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C95591942661500DEA440 /* ORStackViewTests.m */; };
 		3CC74D78194245AC0069A97D /* ORFirstViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC74D77194245AC0069A97D /* ORFirstViewControllerTests.m */; };
 		604D943217BCD45900E331B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 604D943017BCD45900E331B1 /* InfoPlist.strings */; };
 		604D943417BCD45900E331B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D943317BCD45900E331B1 /* main.m */; };
@@ -58,6 +59,7 @@
 		3C9C9553194259D300DEA440 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C9C9555194259DB00DEA440 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C9C955719425CB200DEA440 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
+		3C9C95591942661500DEA440 /* ORStackViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORStackViewTests.m; sourceTree = "<group>"; };
 		3CC74D73194245AC0069A97D /* ORStackViewExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORStackViewExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC74D76194245AC0069A97D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CC74D77194245AC0069A97D /* ORFirstViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORFirstViewControllerTests.m; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				3C9C954D194250B500DEA440 /* ORThirdViewControllerTests.m */,
 				3C9C954F194250C100DEA440 /* ORFourthViewControllerTests.m */,
 				3C9C9551194250CD00DEA440 /* ORFifthViewControllerTests.m */,
+				3C9C95591942661500DEA440 /* ORStackViewTests.m */,
 			);
 			path = ORStackViewExampleTests;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				3CC74D78194245AC0069A97D /* ORFirstViewControllerTests.m in Sources */,
 				3C9C9552194250CD00DEA440 /* ORFifthViewControllerTests.m in Sources */,
 				3C9C9550194250C100DEA440 /* ORFourthViewControllerTests.m in Sources */,
+				3C9C955A1942661500DEA440 /* ORStackViewTests.m in Sources */,
 				3C9C954A1942502A00DEA440 /* ORColorView+DebugColours.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,9 @@
 # ORStackView CHANGELOG
 
+## Next
+
+* Fixed crash when setting ORStackView.bottomMarginHeight without any child views on iOS8 - @dblock
+
 ## 1.2.0
 
 * Added ORSplitStackView - @1aurabrown
