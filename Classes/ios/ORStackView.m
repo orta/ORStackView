@@ -68,10 +68,11 @@
 
     if (self.bottomMarginHeight != NSNotFound) {
         [self removeConstraint:self.bottomConstraint];
-
-        NSString *constraint = [NSString stringWithFormat:@"%0.0f", self.bottomMarginHeight];
         UIView *lastView = self.lastView;
-        self.bottomConstraint = [[self alignBottomEdgeWithView:lastView predicate:constraint] lastObject];
+        if (self.lastView) {
+            NSString *constraint = [NSString stringWithFormat:@"%0.0f", self.bottomMarginHeight];
+            self.bottomConstraint = [[self alignBottomEdgeWithView:lastView predicate:constraint] lastObject];
+        }
     }
 
     [super updateConstraints];
