@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ORStackView"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "An Auto Layout based Stack View."
   s.description  = <<-DESC
                     Vertically stack views using Auto Layout, also includes an 
