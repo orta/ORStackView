@@ -3,6 +3,8 @@
 ## Next
 
 * Fixed crash when setting ORStackView.bottomMarginHeight without any child views on iOS8 - @dblock
+* Defaults to having a bottom constraint, I have _no idea_ why I didn't make this default. - @orta1
+* More inline documentation - @orta
 
 ## 1.2.0
 

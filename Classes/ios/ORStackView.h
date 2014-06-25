@@ -59,7 +59,7 @@
 /// Returns the lowest view in the stack.
 - (UIView *)lastView;
 
-/// Setting this creates a bottom constraint letting the ORStackView set it's own height, defaults to NSNotFound
+/// Setting this creates a bottom constraint letting the ORStackView set it's own height, defaults to 0, use NSNotFound to not create a bttom constraint.
 @property (nonatomic, assign) CGFloat bottomMarginHeight;
 
 /// Settings this will create a constraint on the top view making the view sit below the layout guide (and the top margin)

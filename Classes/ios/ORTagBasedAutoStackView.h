@@ -18,10 +18,13 @@
 // Please don't use the insert methods on this class
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(NSString *)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
+// Please don't use the insert methods on this class
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(NSString *)topMargin sideMargin:(NSString *)sideMargin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
+// Please don't use the insert methods on this class
 - (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview withTopMargin:(NSString *)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
+// Please don't use the insert methods on this class
 - (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview withTopMargin:(NSString *)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
 @end
