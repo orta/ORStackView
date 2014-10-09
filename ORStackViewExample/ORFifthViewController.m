@@ -28,7 +28,6 @@
 
 - (void)viewDidLoad
 {
-
     ORColourView *view1 = [[ORColourView alloc] init];
     view1.text = @"Stack views can be nested inside stack views.";
     view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100};
