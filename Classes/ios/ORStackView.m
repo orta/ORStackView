@@ -230,7 +230,7 @@
     return NSNotFound;
 }
 
-- (NSLayoutConstraint *)topContraintForView:(UIView *)view
+- (NSLayoutConstraint *)topConstraintForView:(UIView *)view
 {
     for (StackView *stackView in self.viewStack) {
         if ([view isEqual:stackView.view]) {

@@ -54,7 +54,7 @@
 // Useful getters
 
 /// Returns the top constraint for a specific view
-- (NSLayoutConstraint *)topContraintForView:(UIView *)view;
+- (NSLayoutConstraint *)topConstraintForView:(UIView *)view;
 
 /// Returns the lowest view in the stack.
 - (UIView *)lastView;
