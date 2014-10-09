@@ -13,7 +13,7 @@
 // Simplest use case: Adding views in order
 
 @interface ORFirstViewController ()
-@property (nonatomic, strong) ORStackView *view;
+@property (nonatomic, strong) ORStackView *stackView;
 @end
 
 @implementation ORFirstViewController
@@ -24,15 +24,19 @@
 
 - (void)loadView
 {
-    self.view = [[ORStackView alloc] init];
-
-    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-        self.view.topLayoutGuide = self.topLayoutGuide;
-    }
+    self.view = [[UIView alloc] init];
 }
 
 - (void)viewDidLoad
 {
+    self.stackView = [[ORStackView alloc] init];
+    [self.view addSubview:self.stackView];
+    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.stackView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    }
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.stackView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.stackView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0]];
+
     ORColourView *view1 = [[ORColourView alloc] init];
     view1.text = @"ORStackView - Tap Me";
     view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
@@ -48,9 +52,9 @@
     view3.text = @"By default, new subviews are added to the bottom of ORStackView.";
     view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
-    [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
-    [self.view addSubview:view2 withTopMargin:@"40" sideMargin:@"70"];
-    [self.view addSubview:view3 withTopMargin:@"30" sideMargin:@"20"];
+    [self.stackView addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
+    [self.stackView addSubview:view2 withTopMargin:@"40" sideMargin:@"70"];
+    [self.stackView addSubview:view3 withTopMargin:@"30" sideMargin:@"20"];
 }
 
 - (void)addView
@@ -58,7 +62,7 @@
     ORColourView *view = [[ORColourView alloc] init];
     view.text = @"Tap to remove";
     view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-    [self.view addSubview:view withTopMargin:@"5" sideMargin:@"40"];
+    [self.stackView addSubview:view withTopMargin:@"5" sideMargin:@"40"];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
     [view addGestureRecognizer:tapGesture];
@@ -66,7 +70,7 @@
 
 - (void)removeTappedView:(UITapGestureRecognizer *)gesture
 {
-    [self.view removeSubview:gesture.view];
+    [self.stackView removeSubview:gesture.view];
 }
 
 @end
