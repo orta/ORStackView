@@ -25,8 +25,7 @@
     self = [super initWithFrame:frame];
     if (!self) return nil;
 
-    _viewStack = [NSMutableArray array];
-    _bottomMarginHeight = 0;
+    [self _setup];
 
     return self;
 }
@@ -34,6 +33,17 @@
 - (instancetype)init
 {
     return [self initWithFrame:CGRectZero];
+}
+
+- (void)awakeFromNib
+{
+    [self _setup];
+}
+
+- (void)_setup
+{
+    _viewStack = [NSMutableArray array];
+    _bottomMarginHeight = 0;
 }
 
 - (void)updateConstraints
