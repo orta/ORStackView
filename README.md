@@ -7,7 +7,7 @@
 Makes setting up a collection of stacked views simple.
 Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
 
-
+It is the basis of the view structure in the Artsy OSS [App Eigen](https://github.com/artsy/eigen/).
 
 ### ORStackView
 
