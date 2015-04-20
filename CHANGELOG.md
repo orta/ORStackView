@@ -1,5 +1,9 @@
 # ORStackView CHANGELOG
 
+## 3.0.0
+
+* Switched to use CGFloats instead of NSStrings - @garnett 
+
 ## 2.0.0
 
 * Fixed crash when setting ORStackView.bottomMarginHeight without any child views on iOS8 - @dblock
