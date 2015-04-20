@@ -17,6 +17,8 @@
 
 @implementation ORFifthViewController
 
+@dynamic view;
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
