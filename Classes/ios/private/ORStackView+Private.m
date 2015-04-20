@@ -16,7 +16,7 @@
     if ([self.view respondsToSelector:@selector(text)]) {
         [descriptionString appendString:[(id)self.view text]];
     }
-    [descriptionString appendFormat:@" ( %@ )", self.constraintPredicate];
+    [descriptionString appendFormat:@" ( %f )", self.constant];
     return descriptionString;
 }
 
