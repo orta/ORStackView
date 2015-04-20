@@ -56,7 +56,7 @@
     // Add the new constraints
     for (StackView *stackView in self.viewStack) {
         UIView *view = stackView.view;
-        NSString *predicate = stackView.constraintPredicate ?: @"0";
+        NSString *predicate = @(stackView.constant).stringValue;
         NSInteger index = [self.viewStack indexOfObject:stackView];
 
         if (index == 0) {
@@ -143,7 +143,7 @@
 
     StackView *stackView = [[StackView alloc] init];
     stackView.view = view;
-    stackView.constraintPredicate = @(topMargin).stringValue;
+    stackView.constant = topMargin;
     [self.viewStack insertObject:stackView atIndex:index];
 
     if (centered) {

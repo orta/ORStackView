@@ -13,7 +13,7 @@
 @interface StackView : NSObject
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) NSLayoutConstraint *topConstraint;
-@property (nonatomic, strong) NSString *constraintPredicate;
+@property (nonatomic, assign) CGFloat constant;
 @end
 
 @interface ORStackView()
