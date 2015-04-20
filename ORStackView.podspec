@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "ORStackView"
-  s.version      = "2.0.0"
+  s.version      = "3.0.0"
   s.summary      = "An Auto Layout based Stack View."
   s.description  = <<-DESC
-                    Vertically stack views using Auto Layout, also includes an 
+                    Vertically stack views using Auto Layout, also includes an
                     order specific subclass that uses view tags for ordering.
                    DESC
   s.homepage     = "https://github.com/orta/ORStackView"
-  
+
   s.license      = 'MIT'
   s.author       = { "Orta Therox" => "orta.therox@gmail.com" }
   s.social_media_url = "http://twitter.com/orta"
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Classes/ios/*', 'Classes/ios/private/*'
   s.private_header_files = 'Classes/ios/private/*.h'
-  
+
   s.dependency 'FLKAutoLayout', '~> 0.1'
 end

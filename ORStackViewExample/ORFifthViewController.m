@@ -86,20 +86,20 @@
     right3.text = @"a view";
     right3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50};
 
-    [view4.leftStack addSubview:left1 withTopMargin:@"0" sideMargin:@"10"];
-    [view4.leftStack addSubview:left2 withTopMargin:@"10" sideMargin:@"5"];
-    [view4.leftStack addSubview:left3 withTopMargin:@"10" sideMargin:@"15"];
-    [view4.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
-    [view4.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
-    [view4.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
+    [view4.leftStack addSubview:left1 withTopMargin:0.0 sideMargin:10.0];
+    [view4.leftStack addSubview:left2 withTopMargin:10.0 sideMargin:5.0];
+    [view4.leftStack addSubview:left3 withTopMargin:10.0 sideMargin:15.0];
+    [view4.rightStack addSubview:right1 withTopMargin:0.0 sideMargin:15.0];
+    [view4.rightStack addSubview:right2 withTopMargin:10.0 sideMargin:10.0];
+    [view4.rightStack addSubview:right3 withTopMargin:10.0 sideMargin:5.0];
 
-    [self.view.stackView addSubview:view1 withTopMargin:@"20" sideMargin:@"40"];
-    [self.view.stackView addSubview:view2 withTopMargin:@"10" sideMargin:@"30"];
-    [self.view.stackView addSubview:view3 withTopMargin:@"10" sideMargin:@"35"];
-    [self.view.stackView addSubview:view4 withTopMargin:@"15" sideMargin:@"30"];
-    [self.view.stackView addSubview:view5 withTopMargin:@"20" sideMargin:@"15"];
-    [self.view.stackView addSubview:view6 withTopMargin:@"10" sideMargin:@"20"];
-    [self.view.stackView addSubview:view7 withTopMargin:@"15" sideMargin:@"30"];
+    [self.view.stackView addSubview:view1 withTopMargin:20.0 sideMargin:40.0];
+    [self.view.stackView addSubview:view2 withTopMargin:10.0 sideMargin:30.0];
+    [self.view.stackView addSubview:view3 withTopMargin:10.0 sideMargin:35.0];
+    [self.view.stackView addSubview:view4 withTopMargin:15.0 sideMargin:30.0];
+    [self.view.stackView addSubview:view5 withTopMargin:20.0 sideMargin:15.0];
+    [self.view.stackView addSubview:view6 withTopMargin:10.0 sideMargin:20.0];
+    [self.view.stackView addSubview:view7 withTopMargin:15.0 sideMargin:30.0];
 
 }
 
@@ -108,7 +108,7 @@
     ORColourView *view = [[ORColourView alloc] init];
     view.text = @"Tap to remove";
     view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40 };
-    [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:@"5" sideMargin:@"10"];
+    [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:5.0 sideMargin:10.0];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
     [view addGestureRecognizer:tapGesture];

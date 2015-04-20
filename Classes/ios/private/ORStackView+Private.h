@@ -22,8 +22,8 @@
 @property (nonatomic, strong) NSMutableArray *viewStack;
 
 // Methods that allow subclasses to make changes around how views are inserted.
-- (void)_addSubview:(UIView *)view withTopMargin:(NSString *)topMargin centered:(BOOL)centered sideMargin:(NSString *)sideMargin;
+- (void)_addSubview:(UIView *)view withTopMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin;
 
 // Methods that allow subclasses to make changes around how views are inserted.
-- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(NSString *)topMargin centered:(BOOL)centered sideMargin:(NSString *)sideMargin;
+- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin;
 @end
