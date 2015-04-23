@@ -4,8 +4,11 @@ before_install:
   - brew uninstall xctool
   - brew install xctool
   - export LANG=en_US.UTF-8
+  - gem i activesupport
   - gem i cocoapods --no-ri --no-rdoc
+  - gem i slather --no-rdoc
 xcode_workspace: ORStackView.xcworkspace
 xcode_scheme: ORStackViewExample
 xcode_sdk: iphonesimulator
+after_success: slather
 

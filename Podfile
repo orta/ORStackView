@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+plugin 'slather'
 workspace 'ORStackView'
 
 target 'ORStackViewExample' do
