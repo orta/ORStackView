@@ -1,0 +1,6 @@
+coverage_service: coveralls
+xcodeproj: ORStackViewExample.xcodeproj/
+source_directory: Classes/ios/
+ignore:
+  - Classes/ios/private/*
+
