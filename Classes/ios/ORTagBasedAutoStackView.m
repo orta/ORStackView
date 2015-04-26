@@ -11,7 +11,7 @@
 
 @implementation ORTagBasedAutoStackView
 
-- (void)_addSubview:(UIView *)view withStartMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_addSubview:(UIView *)view withStartMargin:(CGFloat)startMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSInteger index = self.viewStack.count;
     for (StackView *stackView in self.viewStack) {
@@ -21,7 +21,7 @@
         }
     }
     
-    [self _insertSubview:view atIndex:MAX(0, index) withStartMargin:topMargin centered:centered sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:MAX(0, index) withStartMargin:startMargin centered:centered sideMargin:sideMargin];
 }
 
 @end
