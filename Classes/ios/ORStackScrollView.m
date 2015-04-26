@@ -43,7 +43,7 @@
 
 - (void)_loadStackView:(Class)klass {
     _stackView = [[klass alloc] init];
-    _stackView.bottomMarginHeight = 0;
+    _stackView.lastMarginHeight = 0;
 
     [self addSubview:_stackView];
     [_stackView alignToView:self];

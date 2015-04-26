@@ -9,6 +9,11 @@
 /// A view that will handle vertical stacking subviews for you
 /// allowing arbitrary insertion or removal
 
+typedef NS_ENUM(NSUInteger, ORStackViewDirection)  {
+    ORStackViewDirectionVertical,
+    ORStackViewDirectionHorizontal
+};
+
 @interface ORStackView : UIView
 
 /// Adds a view to the heirarchy, if it's the first it is
@@ -54,16 +59,19 @@
 // Useful getters
 
 /// Returns the top constraint for a specific view
-- (NSLayoutConstraint *)topConstraintForView:(UIView *)view;
+- (NSLayoutConstraint *)firstConstraintForView:(UIView *)view;
 
 /// Returns the lowest view in the stack.
 - (UIView *)lastView;
 
 /// Setting this creates a bottom constraint letting the ORStackView set it's own height, defaults to 0, use NSNotFound to not create a bttom constraint.
-@property (nonatomic, assign) CGFloat bottomMarginHeight;
+@property (nonatomic, assign) CGFloat lastMarginHeight;
 
 /// Settings this will create a constraint on the top view making the view sit below the layout guide (and the top margin)
 @property (nonatomic, strong) id<UILayoutSupport> topLayoutGuide;
+
+/// Direction of stack layout.
+@property (nonatomic, assign) ORStackViewDirection direction;
 
 /// I'd prefer you to not use the UIView subview APIs please, things will break.
 - (void)addSubview:(UIView *)view __attribute__((unavailable("addSubview is not supported on ORStackView.")));

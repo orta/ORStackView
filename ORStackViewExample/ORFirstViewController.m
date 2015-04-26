@@ -8,12 +8,12 @@
 
 #import "ORFirstViewController.h"
 #import "ORColourView.h"
-#import <ORStackView/ORHorizontalStackView.h>
+#import <ORStackView/ORStackView.h>
 
 // Simplest use case: Adding views in order
 
 @interface ORFirstViewController ()
-@property (nonatomic, strong) ORHorizontalStackView *stackView;
+@property (nonatomic, strong) ORStackView *stackView;
 @end
 
 @implementation ORFirstViewController
@@ -29,7 +29,9 @@
 
 - (void)viewDidLoad
 {
-    self.stackView = [[ORHorizontalStackView alloc] init];
+    self.stackView = [[ORStackView alloc] init];
+    self.stackView.direction = ORStackViewDirectionHorizontal;
+    
     [self.view addSubview:self.stackView];
     if ([self respondsToSelector:@selector(topLayoutGuide)]) {
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.stackView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];

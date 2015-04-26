@@ -14,7 +14,7 @@
 
 /// Delay updating constraints when true
 @property (nonatomic, assign) BOOL batchingUpdates;
-@property (nonatomic, strong) NSLayoutConstraint *bottomConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *lastConstraint;
 
 @end
 
@@ -43,45 +43,58 @@
 - (void)_setup
 {
     _viewStack = [NSMutableArray array];
-    _bottomMarginHeight = 0;
+    _lastMarginHeight = 0;
+    _direction = ORStackViewDirectionVertical;
 }
 
 - (void)updateConstraints
 {
     // Remove all constraints
     for (StackView *stackView in self.viewStack) {
-        [self removeConstraint:stackView.topConstraint];
+        [self removeConstraint:stackView.firstConstraint];
     }
 
     // Add the new constraints
     for (StackView *stackView in self.viewStack) {
         UIView *view = stackView.view;
-        NSString *predicate = @(stackView.constant).stringValue;
+        NSString *constraint = @(stackView.constant).stringValue;
         NSInteger index = [self.viewStack indexOfObject:stackView];
 
-        if (index == 0) {
-            if (self.topLayoutGuide) {
-                id topLayoutGuide = self.topLayoutGuide;
-                NSString *vhl = [NSString stringWithFormat:@"V:[topLayoutGuide]-%@-[view]", predicate];
-                NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:vhl options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(view, topLayoutGuide)];
-                [self addConstraints:constraints];
-                stackView.topConstraint = [constraints firstObject];
+        if (self.direction == ORStackViewDirectionVertical) {
+            if (index == 0) {
+                if (self.topLayoutGuide) {
+                    id topLayoutGuide = self.topLayoutGuide;
+                    NSString *vhl = [NSString stringWithFormat:@"V:[topLayoutGuide]-%@-[view]", constraint];
+                    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:vhl options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(view, topLayoutGuide)];
+                    [self addConstraints:constraints];
+                    stackView.firstConstraint = [constraints firstObject];
+                } else {
+                    stackView.firstConstraint = [[view alignTopEdgeWithView:self predicate:constraint] lastObject];
+                }
             } else {
-                stackView.topConstraint = [[view alignTopEdgeWithView:self predicate:predicate] lastObject];
+                UIView *viewAbove = [self.viewStack[index - 1] view];
+                stackView.firstConstraint = [[view constrainTopSpaceToView:viewAbove predicate:constraint] lastObject];
             }
         } else {
-
-            UIView *viewAbove = [self.viewStack[index - 1] view];
-            stackView.topConstraint = [[view constrainTopSpaceToView:viewAbove predicate:predicate] lastObject];
+            if (index == 0) {
+                stackView.firstConstraint = [[view alignLeadingEdgeWithView:self predicate:constraint] lastObject];
+            } else {
+                UIView *viewAbove = [self.viewStack[index - 1] view];
+                stackView.firstConstraint = [[view constrainLeadingSpaceToView:viewAbove predicate:constraint] lastObject];
+            }
         }
     }
 
-    if (self.bottomMarginHeight != NSNotFound) {
-        [self removeConstraint:self.bottomConstraint];
+    if (self.lastMarginHeight != NSNotFound) {
+        [self removeConstraint:self.lastConstraint];
         UIView *lastView = self.lastView;
         if (self.lastView) {
-            NSString *constraint = [NSString stringWithFormat:@"%0.0f", self.bottomMarginHeight];
-            self.bottomConstraint = [[self alignBottomEdgeWithView:lastView predicate:constraint] lastObject];
+            NSString *constraint = @(self.lastMarginHeight).stringValue;
+            if (self.direction == ORStackViewDirectionVertical) {
+                self.lastConstraint = [[self alignBottomEdgeWithView:lastView predicate:constraint] lastObject];
+            } else {
+                self.lastConstraint = [[self alignTrailingEdgeWithView:lastView predicate:constraint] lastObject];
+            }
         }
     }
 
@@ -92,30 +105,30 @@
 
 - (void)addSubview:(UIView *)view withTopMargin:(CGFloat)margin
 {
-    [self _addSubview:view withTopMargin:margin centered:NO sideMargin:0];
+    [self _addSubview:view withBeforetMargin:margin centered:NO sideMargin:0];
 }
 
 - (void)addSubview:(UIView *)view withTopMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin
 {
-    [self _addSubview:view withTopMargin:topMargin centered:YES sideMargin:sideMargin];
+    [self _addSubview:view withBeforetMargin:topMargin centered:YES sideMargin:sideMargin];
 }
 
-- (void)_addSubview:(UIView *)view withTopMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_addSubview:(UIView *)view withBeforetMargin:(CGFloat)beforeMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSInteger index = self.viewStack.count;
-    [self _insertSubview:view atIndex:index withTopMargin:topMargin centered:centered sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:index withBeforeMargin:beforeMargin centered:centered sideMargin:sideMargin];
 }
 
 #pragma mark - Inserting Subviews
 
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)margin;
 {
-    [self _insertSubview:view atIndex:index withTopMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withBeforeMargin:margin centered:NO sideMargin:0];
 }
 
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin
 {
-    [self _insertSubview:view atIndex:index withTopMargin:topMargin centered:YES sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:index withBeforeMargin:topMargin centered:YES sideMargin:sideMargin];
 }
 
 
@@ -123,7 +136,7 @@
 {
     BOOL hasSibling = [self.subviews containsObject:siblingSubview];
     NSInteger index = hasSibling ? [self indexOfView:siblingSubview] : self.viewStack.count;
-    [self _insertSubview:view atIndex:index withTopMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withBeforeMargin:margin centered:NO sideMargin:0];
 }
 
 - (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview withTopMargin:(CGFloat)margin
@@ -131,10 +144,10 @@
     NSAssert([self.subviews containsObject:siblingSubview], @"SiblingSubview not found in ORStackView");
 
     NSInteger index = [self indexOfView:siblingSubview] - 1;
-    [self _insertSubview:view atIndex:index withTopMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withBeforeMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withBeforeMargin:(CGFloat)beforeMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSParameterAssert(view);
     if ([self.subviews containsObject:view]) return;
@@ -143,12 +156,17 @@
 
     StackView *stackView = [[StackView alloc] init];
     stackView.view = view;
-    stackView.constant = topMargin;
+    stackView.constant = beforeMargin;
     [self.viewStack insertObject:stackView atIndex:index];
 
     if (centered) {
-        [view constrainWidthToView:self predicate:@(-sideMargin).stringValue];
-        [view alignCenterXWithView:self predicate:nil];
+        if (self.direction == ORStackViewDirectionVertical) {
+            [view constrainWidthToView:self predicate:@(-sideMargin).stringValue];
+            [view alignCenterXWithView:self predicate:nil];
+        } else {
+            [view constrainHeightToView:self predicate:@(-sideMargin).stringValue];
+            [view alignCenterYWithView:self predicate:nil];
+        }
     }
 
     if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
@@ -223,11 +241,11 @@
     return NSNotFound;
 }
 
-- (NSLayoutConstraint *)topConstraintForView:(UIView *)view
+- (NSLayoutConstraint *)firstConstraintForView:(UIView *)view
 {
     for (StackView *stackView in self.viewStack) {
         if ([view isEqual:stackView.view]) {
-            return stackView.topConstraint;
+            return stackView.firstConstraint;
         }
     }
     return nil;
@@ -243,6 +261,13 @@
 - (void)setTopLayoutGuide:(id<UILayoutSupport>)topLayoutGuide {
     _topLayoutGuide = topLayoutGuide;
     [self needsUpdateConstraints];
+}
+
+#pragma mark - Direction
+
+- (void)setDirection:(ORStackViewDirection)direction {
+    _direction = direction;
+    [self setNeedsUpdateConstraints];
 }
 
 @end
