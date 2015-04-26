@@ -103,51 +103,51 @@
 
 #pragma mark - Adding Subviews
 
-- (void)addSubview:(UIView *)view withTopMargin:(CGFloat)margin
+- (void)addSubview:(UIView *)view withStartMargin:(CGFloat)margin
 {
-    [self _addSubview:view withBeforetMargin:margin centered:NO sideMargin:0];
+    [self _addSubview:view withStartMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)addSubview:(UIView *)view withTopMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin
+- (void)addSubview:(UIView *)view withStartMargin:(CGFloat)startMargin sideMargin:(CGFloat)sideMargin
 {
-    [self _addSubview:view withBeforetMargin:topMargin centered:YES sideMargin:sideMargin];
+    [self _addSubview:view withStartMargin:startMargin centered:YES sideMargin:sideMargin];
 }
 
-- (void)_addSubview:(UIView *)view withBeforetMargin:(CGFloat)beforeMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_addSubview:(UIView *)view withStartMargin:(CGFloat)startMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSInteger index = self.viewStack.count;
-    [self _insertSubview:view atIndex:index withBeforeMargin:beforeMargin centered:centered sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:index withStartMargin:startMargin centered:centered sideMargin:sideMargin];
 }
 
 #pragma mark - Inserting Subviews
 
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)margin;
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)margin;
 {
-    [self _insertSubview:view atIndex:index withBeforeMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withStartMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)startMargin sideMargin:(CGFloat)sideMargin
 {
-    [self _insertSubview:view atIndex:index withBeforeMargin:topMargin centered:YES sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:index withStartMargin:startMargin centered:YES sideMargin:sideMargin];
 }
 
 
-- (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview withTopMargin:(CGFloat)margin
+- (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin
 {
     BOOL hasSibling = [self.subviews containsObject:siblingSubview];
     NSInteger index = hasSibling ? [self indexOfView:siblingSubview] : self.viewStack.count;
-    [self _insertSubview:view atIndex:index withBeforeMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withStartMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview withTopMargin:(CGFloat)margin
+- (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin
 {
     NSAssert([self.subviews containsObject:siblingSubview], @"SiblingSubview not found in ORStackView");
 
     NSInteger index = [self indexOfView:siblingSubview] - 1;
-    [self _insertSubview:view atIndex:index withBeforeMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withStartMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withBeforeMargin:(CGFloat)beforeMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)startMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSParameterAssert(view);
     if ([self.subviews containsObject:view]) return;
@@ -156,7 +156,7 @@
 
     StackView *stackView = [[StackView alloc] init];
     stackView.view = view;
-    stackView.constant = beforeMargin;
+    stackView.constant = startMargin;
     [self.viewStack insertObject:stackView atIndex:index];
 
     if (centered) {
@@ -212,19 +212,19 @@
     [self setNeedsUpdateConstraints];
 }
 
-- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withTopMargin:(CGFloat)margin
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withStartMargin:(CGFloat)margin
 {
     [viewController willMoveToParentViewController:parentViewController];
     [parentViewController addChildViewController:viewController];
-    [self addSubview:viewController.view withTopMargin:margin];
+    [self addSubview:viewController.view withStartMargin:margin];
     [viewController didMoveToParentViewController:parentViewController];
 }
 
-- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withTopMargin:(CGFloat)margin sideMargin:(CGFloat)sideMargin;
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withStartMargin:(CGFloat)margin sideMargin:(CGFloat)sideMargin;
 {
     [viewController willMoveToParentViewController:parentViewController];
     [parentViewController addChildViewController:viewController];
-    [self addSubview:viewController.view withTopMargin:margin sideMargin:sideMargin];
+    [self addSubview:viewController.view withStartMargin:margin sideMargin:sideMargin];
     [viewController didMoveToParentViewController:parentViewController];
 }
 

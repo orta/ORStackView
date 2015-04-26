@@ -59,11 +59,11 @@
     view5.text = @"tag = 5";
     view5.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60 };
     view5.tag = 5;
-
-    [self.stackView addSubview:view2 withTopMargin:10.0 sideMargin:40.0];
-    [self.stackView addSubview:view5 withTopMargin:20.0 sideMargin:20.0];
-    [self.stackView addSubview:view4 withTopMargin:10.0 sideMargin:20.0];
-    [self.stackView addSubview:view1 withTopMargin:20.0 sideMargin:30.0];
+    
+    [self.stackView addSubview:view2 withStartMargin:10.0 sideMargin:40.0];
+    [self.stackView addSubview:view5 withStartMargin:20.0 sideMargin:20.0];
+    [self.stackView addSubview:view4 withStartMargin:10.0 sideMargin:20.0];
+    [self.stackView addSubview:view1 withStartMargin:20.0 sideMargin:30.0];
 }
 
 - (void)addView
@@ -74,8 +74,8 @@
     view3.text = @"tap to remove me\ntag = 3";
     view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50 };
     view3.tag = 3;
-
-    [self.stackView addSubview:view3 withTopMargin:20.0 sideMargin:70.0];
+    
+    [self.stackView addSubview:view3 withStartMargin:20.0 sideMargin:70.0];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
     [view3 addGestureRecognizer:tapGesture];

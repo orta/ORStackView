@@ -54,11 +54,11 @@
     ORColourView *view4 = [[ORColourView alloc] init];
     view4.text = @"4 - Lorem ipsum, etc. etc.";
     view4.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
-
-    [self.stackView insertSubview:view2 atIndex:0 withTopMargin:20.0 sideMargin:20.0];
-    [self.stackView insertSubview:view4 atIndex:1 withTopMargin:15.0 sideMargin:20.0];
-    [self.stackView insertSubview:view1 atIndex:0 withTopMargin:10.0 sideMargin:20.0];
-    [self.stackView insertSubview:view3 atIndex:2 withTopMargin:10.0 sideMargin:20.0];
+    
+    [self.stackView insertSubview:view2 atIndex:0 withStartMargin:20.0 sideMargin:20.0];
+    [self.stackView insertSubview:view4 atIndex:1 withStartMargin:15.0 sideMargin:20.0];
+    [self.stackView insertSubview:view1 atIndex:0 withStartMargin:10.0 sideMargin:20.0];
+    [self.stackView insertSubview:view3 atIndex:2 withStartMargin:10.0 sideMargin:20.0];
 }
 
 - (void)addView
@@ -66,8 +66,8 @@
     ORColourView *view = [[ORColourView alloc] init];
     view.text = @"new view added at index 2\nTap to remove";
     view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50 };
-
-    [self.stackView insertSubview:view atIndex:2 withTopMargin:10.0 sideMargin:10.0];
+    
+    [self.stackView insertSubview:view atIndex:2 withStartMargin:10.0 sideMargin:10.0];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
     [view addGestureRecognizer:tapGesture];
 }
