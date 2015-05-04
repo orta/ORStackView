@@ -16,15 +16,15 @@
 
 
 // Please don't use the insert methods on this class
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
 // Please don't use the insert methods on this class
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)precedingMargin sideMargin:(CGFloat)sideMargin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
 // Please don't use the insert methods on this class
-- (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview withTopMargin:(CGFloat)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
+- (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withPrecedingMargin:(CGFloat)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
 // Please don't use the insert methods on this class
-- (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview withTopMargin:(CGFloat)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
+- (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withPrecedingMargin:(CGFloat)margin __attribute__((unavailable("Inserting subviews is not supported on ORTagBasedAutoStackView.")));
 
 @end

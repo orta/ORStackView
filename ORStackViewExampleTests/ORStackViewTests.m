@@ -21,7 +21,7 @@ describe(@"bottomMarginHeight", ^{
         UIViewController *vc = [[UIViewController alloc] init];
         window.rootViewController = vc;
         ORStackView *view = [[ORStackView alloc] initWithFrame:vc.view.bounds];
-        view.bottomMarginHeight = 10;
+        view.lastMarginHeight = 10;
         [vc.view addSubview:view];
         [view setNeedsUpdateConstraints];
         [window makeKeyAndVisible];

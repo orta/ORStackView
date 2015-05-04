@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong, readonly) ORStackView *stackView;
 
-/// Optional init method incase you want to use a subclass of ORStackView
+/// Optional init method in case you want to use a subclass of ORStackView
 - (instancetype)initWithStackViewClass:(Class)klass;
 
 @end
