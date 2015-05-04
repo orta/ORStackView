@@ -11,6 +11,8 @@
 
 @interface ORStackScrollView()
 
+@property (nonatomic, copy) NSArray *contentConstraints;
+
 @end
 
 @implementation ORStackScrollView
@@ -47,7 +49,17 @@
 
     [self addSubview:_stackView];
     [_stackView alignToView:self];
-    [_stackView constrainWidthToView:self predicate:@""];
+}
+
+- (void)updateConstraints {
+    [self removeConstraints:self.contentConstraints];
+    if (self.stackView.direction == ORStackViewDirectionHorizontal) {
+        self.contentConstraints = [_stackView constrainHeightToView:self predicate:@""];
+    } else {
+        self.contentConstraints = [_stackView constrainWidthToView:self predicate:@""];
+    }
+    
+    [super updateConstraints];
 }
 
 @end
