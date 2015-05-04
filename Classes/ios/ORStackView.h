@@ -16,8 +16,9 @@ typedef NS_ENUM(NSUInteger, ORStackViewDirection)  {
 
 @interface ORStackView : UIView
 
-/// Adds a view to the heirarchy, if it's the first it is
-/// attached to the top, otherwise to the view above.
+/// Adds a view to the hierarchy, depending on the orientation it will place it
+/// at the the top of the stack either vertically or horizontally.
+/// After this views will be attached incrementally.
 - (void)addSubview:(UIView *)view withStartMargin:(CGFloat)margin;
 
 /// Adds a view to the heirarchy like addSubview:withTopMargin:
@@ -40,10 +41,10 @@ typedef NS_ENUM(NSUInteger, ORStackViewDirection)  {
 /// Inserts a subview and centeres it
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin;
 
-/// Insert a subview below another view, or at the end if it cannot be found
+/// Insert a subview after another view, or at the end if it cannot be found
 - (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin;
 
-/// Insert a subview above another view, will assert if view is not found
+/// Insert a subview before another view, will assert if view is not found
 - (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin;
 
 /// Remove a subview from the Stack View
@@ -58,13 +59,13 @@ typedef NS_ENUM(NSUInteger, ORStackViewDirection)  {
 
 // Useful getters
 
-/// Returns the top constraint for a specific view
+/// Returns the first constraint for a specific view, depending on the orientation it will be top or left constraint.
 - (NSLayoutConstraint *)firstConstraintForView:(UIView *)view;
 
 /// Returns the lowest view in the stack.
 - (UIView *)lastView;
 
-/// Setting this creates a bottom constraint letting the ORStackView set it's own height, defaults to 0, use NSNotFound to not create a bttom constraint.
+/// Setting this creates a last constraint letting the ORStackView set it's own height or width (depending on orientation), defaults to 0, use NSNotFound to not create constraint.
 @property (nonatomic, assign) CGFloat lastMarginHeight;
 
 /// Settings this will create a constraint on the top view making the view sit below the layout guide (and the top margin)
