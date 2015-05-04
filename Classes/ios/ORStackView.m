@@ -51,7 +51,7 @@
 {
     // Remove all constraints
     for (StackView *stackView in self.viewStack) {
-        [self removeConstraint:stackView.firstConstraint];
+        [self removeConstraint:stackView.precedingConstraint];
     }
 
     // Add the new constraints
@@ -67,20 +67,20 @@
                     NSString *vhl = [NSString stringWithFormat:@"V:[topLayoutGuide]-%@-[view]", constraint];
                     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:vhl options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(view, topLayoutGuide)];
                     [self addConstraints:constraints];
-                    stackView.firstConstraint = [constraints firstObject];
+                    stackView.precedingConstraint = [constraints firstObject];
                 } else {
-                    stackView.firstConstraint = [[view alignTopEdgeWithView:self predicate:constraint] lastObject];
+                    stackView.precedingConstraint = [[view alignTopEdgeWithView:self predicate:constraint] lastObject];
                 }
             } else {
                 UIView *viewAbove = [self.viewStack[index - 1] view];
-                stackView.firstConstraint = [[view constrainTopSpaceToView:viewAbove predicate:constraint] lastObject];
+                stackView.precedingConstraint = [[view constrainTopSpaceToView:viewAbove predicate:constraint] lastObject];
             }
         } else {
             if (index == 0) {
-                stackView.firstConstraint = [[view alignLeadingEdgeWithView:self predicate:constraint] lastObject];
+                stackView.precedingConstraint = [[view alignLeadingEdgeWithView:self predicate:constraint] lastObject];
             } else {
                 UIView *viewAbove = [self.viewStack[index - 1] view];
-                stackView.firstConstraint = [[view constrainLeadingSpaceToView:viewAbove predicate:constraint] lastObject];
+                stackView.precedingConstraint = [[view constrainLeadingSpaceToView:viewAbove predicate:constraint] lastObject];
             }
         }
     }
@@ -103,51 +103,52 @@
 
 #pragma mark - Adding Subviews
 
-- (void)addSubview:(UIView *)view withStartMargin:(CGFloat)margin
+- (void)addSubview:(UIView *)view withPrecedingMargin:(CGFloat)margin
 {
-    [self _addSubview:view withStartMargin:margin centered:NO sideMargin:0];
+    [self _addSubview:view withPrecedingMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)addSubview:(UIView *)view withStartMargin:(CGFloat)startMargin sideMargin:(CGFloat)sideMargin
+- (void)addSubview:(UIView *)view withPrecedingMargin:(CGFloat)precedingMargin sideMargin:(CGFloat)sideMargin
 {
-    [self _addSubview:view withStartMargin:startMargin centered:YES sideMargin:sideMargin];
+    [self _addSubview:view withPrecedingMargin:precedingMargin centered:YES sideMargin:sideMargin];
 }
 
-- (void)_addSubview:(UIView *)view withStartMargin:(CGFloat)startMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_addSubview:(UIView *)view withPrecedingMargin:(CGFloat)precedingMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSInteger index = self.viewStack.count;
-    [self _insertSubview:view atIndex:index withStartMargin:startMargin centered:centered sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:index withPrecedingMargin:precedingMargin centered:centered sideMargin:sideMargin];
 }
 
 #pragma mark - Inserting Subviews
 
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)margin;
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)margin;
 {
-    [self _insertSubview:view atIndex:index withStartMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withPrecedingMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)startMargin sideMargin:(CGFloat)sideMargin
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)precedingMargin sideMargin:(CGFloat)sideMargin
 {
-    [self _insertSubview:view atIndex:index withStartMargin:startMargin centered:YES sideMargin:sideMargin];
+    [self _insertSubview:view atIndex:index withPrecedingMargin:precedingMargin centered:YES sideMargin:sideMargin];
 }
 
 
-- (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin
+- (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withPrecedingMargin:(CGFloat)margin
 {
     BOOL hasSibling = [self.subviews containsObject:siblingSubview];
     NSInteger index = hasSibling ? [self indexOfView:siblingSubview] : self.viewStack.count;
-    [self _insertSubview:view atIndex:index withStartMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withPrecedingMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin
+- (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withPrecedingMargin:(CGFloat)margin
 {
     NSAssert([self.subviews containsObject:siblingSubview], @"SiblingSubview not found in ORStackView");
 
     NSInteger index = [self indexOfView:siblingSubview] - 1;
-    [self _insertSubview:view atIndex:index withStartMargin:margin centered:NO sideMargin:0];
+    [self _insertSubview:view atIndex:index withPrecedingMargin:margin centered:NO sideMargin:0];
 }
 
-- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)startMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
+- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)precedingMargin
+                                                                          centered:(BOOL)centered sideMargin:(CGFloat)sideMargin
 {
     NSParameterAssert(view);
     if ([self.subviews containsObject:view]) return;
@@ -156,7 +157,7 @@
 
     StackView *stackView = [[StackView alloc] init];
     stackView.view = view;
-    stackView.constant = startMargin;
+    stackView.constant = precedingMargin;
     [self.viewStack insertObject:stackView atIndex:index];
 
     if (centered) {
@@ -212,19 +213,19 @@
     [self setNeedsUpdateConstraints];
 }
 
-- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withStartMargin:(CGFloat)margin
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withPrecedingMargin:(CGFloat)margin
 {
     [viewController willMoveToParentViewController:parentViewController];
     [parentViewController addChildViewController:viewController];
-    [self addSubview:viewController.view withStartMargin:margin];
+    [self addSubview:viewController.view withPrecedingMargin:margin];
     [viewController didMoveToParentViewController:parentViewController];
 }
 
-- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withStartMargin:(CGFloat)margin sideMargin:(CGFloat)sideMargin;
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withPrecedingMargin:(CGFloat)margin sideMargin:(CGFloat)sideMargin;
 {
     [viewController willMoveToParentViewController:parentViewController];
     [parentViewController addChildViewController:viewController];
-    [self addSubview:viewController.view withStartMargin:margin sideMargin:sideMargin];
+    [self addSubview:viewController.view withPrecedingMargin:margin sideMargin:sideMargin];
     [viewController didMoveToParentViewController:parentViewController];
 }
 
@@ -241,11 +242,11 @@
     return NSNotFound;
 }
 
-- (NSLayoutConstraint *)firstConstraintForView:(UIView *)view
+- (NSLayoutConstraint *)precedingConstraintForView:(UIView *)view
 {
     for (StackView *stackView in self.viewStack) {
         if ([view isEqual:stackView.view]) {
-            return stackView.firstConstraint;
+            return stackView.precedingConstraint;
         }
     }
     return nil;

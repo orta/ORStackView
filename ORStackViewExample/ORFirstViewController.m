@@ -64,9 +64,9 @@
     view3.text = @"By default, new subviews are added to the right of ORHorizontalStackView.";
     view3.fakeContentSize = (CGSize){ 100, UIViewNoIntrinsicMetric };
     
-    [self.stackView addSubview:view1 withStartMargin:20.0 sideMargin:30.0];
-    [self.stackView addSubview:view2 withStartMargin:10.0 sideMargin:170.0];
-    [self.stackView addSubview:view3 withStartMargin:30.0 sideMargin:20.0];
+    [self.stackView addSubview:view1 withPrecedingMargin:20.0 sideMargin:30.0];
+    [self.stackView addSubview:view2 withPrecedingMargin:10.0 sideMargin:170.0];
+    [self.stackView addSubview:view3 withPrecedingMargin:30.0 sideMargin:20.0];
 }
 
 - (void)addView
@@ -74,7 +74,7 @@
     ORColourView *view = [[ORColourView alloc] init];
     view.text = @"Tap to remove";
     view.fakeContentSize = (CGSize){ 24, UIViewNoIntrinsicMetric};
-    [self.stackView addSubview:view withStartMargin:5.0 sideMargin:40.0];
+    [self.stackView addSubview:view withPrecedingMargin:5.0 sideMargin:40.0];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
     [view addGestureRecognizer:tapGesture];

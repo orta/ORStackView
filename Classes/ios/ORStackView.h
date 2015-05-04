@@ -19,33 +19,33 @@ typedef NS_ENUM(NSUInteger, ORStackViewDirection)  {
 /// Adds a view to the hierarchy, depending on the orientation it will place it
 /// at the the top of the stack either vertically or horizontally.
 /// After this views will be attached incrementally.
-- (void)addSubview:(UIView *)view withStartMargin:(CGFloat)margin;
+- (void)addSubview:(UIView *)view withPrecedingMargin:(CGFloat)margin;
 
-/// Adds a view to the heirarchy like addSubview:withTopMargin:
+/// Adds a view to the hierarchy like addSubview:withPrecedingMargin:
 /// will also center and apply side margins as insets from edge
-- (void)addSubview:(UIView *)view withStartMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin;
+- (void)addSubview:(UIView *)view withPrecedingMargin:(CGFloat)precedingMargin sideMargin:(CGFloat)sideMargin;
 
-/// Adds a view controller's view to the stack heirarchy
-- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withStartMargin:(CGFloat)margin;
+/// Adds a view controller's view to the stack hierarchy
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withPrecedingMargin:(CGFloat)margin;
 
-/// Adds a view controller's view to the stack heirarchy, and applys edge insets
-- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withStartMargin:(CGFloat)margin sideMargin:(CGFloat)sideMargin;
+/// Adds a view controller's view to the stack hierarchy, and applies edge insets
+- (void)addViewController:(UIViewController *)viewController toParent:(UIViewController *)parentViewController withPrecedingMargin:(CGFloat)margin sideMargin:(CGFloat)sideMargin;
 
 
 // Note: These indexes are not z-order, but stack order.
 //  z-index ordering can be done with the UIView methods bringSubviewToFront:
 
 /// Insert a subview at an arbitrary index in the stack's order
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)margin;
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)margin;
 
-/// Inserts a subview and centeres it
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withStartMargin:(CGFloat)topMargin sideMargin:(CGFloat)sideMargin;
+/// Inserts a subview and centers it
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)precedingMargin sideMargin:(CGFloat)sideMargin;
 
 /// Insert a subview after another view, or at the end if it cannot be found
-- (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin;
+- (void)insertSubview:(UIView *)view afterSubview:(UIView *)siblingSubview withPrecedingMargin:(CGFloat)margin;
 
 /// Insert a subview before another view, will assert if view is not found
-- (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withStartMargin:(CGFloat)margin;
+- (void)insertSubview:(UIView *)view beforeSubview:(UIView *)siblingSubview withPrecedingMargin:(CGFloat)margin;
 
 /// Remove a subview from the Stack View
 - (void)removeSubview:(UIView *)subview;
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSUInteger, ORStackViewDirection)  {
 // Useful getters
 
 /// Returns the first constraint for a specific view, depending on the orientation it will be top or left constraint.
-- (NSLayoutConstraint *)firstConstraintForView:(UIView *)view;
+- (NSLayoutConstraint *)precedingConstraintForView:(UIView *)view;
 
 /// Returns the lowest view in the stack.
 - (UIView *)lastView;
