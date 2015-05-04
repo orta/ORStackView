@@ -50,14 +50,21 @@
 /// Perform insertion / removals without updating the constraints
 - (void)performBatchUpdates:(void (^)(void))updates;
 
+- (BOOL)updateTopMargin:(NSString *)topMargin forView:(UIView *)view;
 
 // Useful getters
 
 /// Returns the top constraint for a specific view
 - (NSLayoutConstraint *)topConstraintForView:(UIView *)view;
 
+/// Returns the highest view in the stack.
+- (UIView *)firstView;
+
 /// Returns the lowest view in the stack.
 - (UIView *)lastView;
+
+/// Force the top view to be flush with the top of the ORStackView
+@property (nonatomic, assign) BOOL forceZeroTopMargin;
 
 /// Setting this creates a bottom constraint letting the ORStackView set it's own height, defaults to 0, use NSNotFound to not create a bttom constraint.
 @property (nonatomic, assign) CGFloat bottomMarginHeight;

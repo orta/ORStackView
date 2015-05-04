@@ -250,6 +250,24 @@
     return nil;
 }
 
+- (BOOL)updateTopMargin:(NSString *)topMargin forView:(UIView *)view
+{
+    for (StackView *stackView in self.viewStack) {
+        if ([view isEqual:stackView.view]) {
+            stackView.constraintPredicate = topMargin;
+            if (!self.batchingUpdates) [self setNeedsUpdateConstraints];
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
+- (UIView *)firstView
+{
+    return [[self.viewStack firstObject] view];
+}
+
 - (UIView *)lastView
 {
     return [[self.viewStack lastObject] view];
