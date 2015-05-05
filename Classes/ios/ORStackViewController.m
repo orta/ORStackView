@@ -14,6 +14,11 @@
     self.view = [[ORStackScrollView alloc] init];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.scrollView.contentInset = UIEdgeInsetsMake(self.topLayoutGuide.length, 0, self.bottomLayoutGuide.length, 0);
+}
+
 - (ORStackScrollView *)scrollView {
     return (ORStackScrollView *)self.view;
 }

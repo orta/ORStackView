@@ -20,8 +20,6 @@
 
 - (void)viewDidLoad
 {
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     ORColourView *view1 = [[ORColourView alloc] init];
     view1.text = @"1 - ORStackView - Tap Me";
     view1.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
