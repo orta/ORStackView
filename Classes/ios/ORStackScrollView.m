@@ -52,7 +52,10 @@
 }
 
 - (void)updateConstraints {
-    [self removeConstraints:self.contentConstraints];
+    for (NSLayoutConstraint *constraint in self.contentConstraints) {
+        [self removeConstraint:constraint];
+    }
+    
     if (self.stackView.direction == ORStackViewDirectionHorizontal) {
         self.contentConstraints = [_stackView constrainHeightToView:self predicate:@""];
     } else {
