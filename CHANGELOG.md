@@ -1,5 +1,9 @@
 # ORStackView CHANGELOG
 
+## 3.0.1
+
+* iOS7 fixes - @garnett 
+
 ## 3.0.0
 
 * Massive API breaking changes
