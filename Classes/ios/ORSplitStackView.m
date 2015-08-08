@@ -55,8 +55,8 @@
     }
     [_rightStack alignAttribute:NSLayoutAttributeLeading toAttribute:NSLayoutAttributeTrailing ofView:_leftStack predicate:@">=0@250"];
 
-    _leftStack.bottomMarginHeight = 0;
-    _rightStack.bottomMarginHeight = 0;
+    _leftStack.lastMarginHeight = 0;
+    _rightStack.lastMarginHeight = 0;
 
     return self;
 }

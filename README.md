@@ -1,6 +1,7 @@
 # ORStackView
 
 [![Build Status](https://travis-ci.org/orta/ORStackView.svg)](https://travis-ci.org/orta/ORStackView)
+[![Coverage Status](https://coveralls.io/repos/orta/ORStackView/badge.svg?branch=master)](https://coveralls.io/r/orta/ORStackView?branch=master)
 [![Version](http://cocoapod-badges.herokuapp.com/v/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
 

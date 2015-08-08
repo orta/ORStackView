@@ -12,7 +12,7 @@
 
 @interface StackView : NSObject
 @property (nonatomic, strong) UIView *view;
-@property (nonatomic, strong) NSLayoutConstraint *topConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *precedingConstraint;
 @property (nonatomic, assign) CGFloat constant;
 @end
 
@@ -22,8 +22,8 @@
 @property (nonatomic, strong) NSMutableArray *viewStack;
 
 // Methods that allow subclasses to make changes around how views are inserted.
-- (void)_addSubview:(UIView *)view withTopMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin;
+- (void)_addSubview:(UIView *)view withPrecedingMargin:(CGFloat)precedingMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin;
 
 // Methods that allow subclasses to make changes around how views are inserted.
-- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withTopMargin:(CGFloat)topMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin;
+- (void)_insertSubview:(UIView *)view atIndex:(NSInteger)index withPrecedingMargin:(CGFloat)precedingMargin centered:(BOOL)centered sideMargin:(CGFloat)sideMargin;
 @end

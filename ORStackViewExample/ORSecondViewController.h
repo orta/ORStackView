@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Orta. All rights reserved.
 //
 
-@interface ORSecondViewController : UIViewController
+#import <ORStackView/ORStackViewController.h>
+
+@interface ORSecondViewController : ORStackViewController
 
 @end

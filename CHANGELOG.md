@@ -1,13 +1,21 @@
 # ORStackView CHANGELOG
 
+## 3.0.1
+
+* iOS7 fixes - @garnett 
+
 ## 3.0.0
 
+* Massive API breaking changes
+
 * Switched to use CGFloats instead of NSStrings - @garnett 
+* Supports horizontal layouts - @garnett
+* Adds a ORStackViewController - @garnett 
 
 ## 2.0.0
 
 * Fixed crash when setting ORStackView.bottomMarginHeight without any child views on iOS8 - @dblock
-* Defaults to having a bottom constraint, I have _no idea_ why I didn't make this default. - @orta1
+* Defaults to having a bottom constraint, I have _no idea_ why I didn't make this default. - @orta
 * More inline documentation - @orta
 * Update FBSnapshotTestCase and Expecta+Snapshots to fix Xcode6 testing. - @dbgrandi
 * Support using Interface Builder - @orta

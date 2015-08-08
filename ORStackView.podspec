@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/ios/*', 'Classes/ios/private/*'
   s.private_header_files = 'Classes/ios/private/*.h'
 
-  s.dependency 'FLKAutoLayout', '~> 0.1'
+  s.dependency 'FLKAutoLayout', '~> 0.2'
 end

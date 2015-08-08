@@ -59,13 +59,13 @@
     ORColourView *right3 = [[ORColourView alloc] init];
     right3.text = @"a view";
     right3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
-
-    [splitView.leftStack addSubview:left1 withTopMargin:0.0 sideMargin:10.0];
-    [splitView.leftStack addSubview:left2 withTopMargin:10.0 sideMargin:5.0];
-    [splitView.leftStack addSubview:left3 withTopMargin:10.0 sideMargin:15.0];
-    [splitView.rightStack addSubview:right1 withTopMargin:0.0 sideMargin:15.0];
-    [splitView.rightStack addSubview:right2 withTopMargin:10.0 sideMargin:10.0];
-    [splitView.rightStack addSubview:right3 withTopMargin:10.0 sideMargin:5.0];
+    
+    [splitView.leftStack addSubview:left1 withPrecedingMargin:0.0 sideMargin:10.0];
+    [splitView.leftStack addSubview:left2 withPrecedingMargin:10.0 sideMargin:5.0];
+    [splitView.leftStack addSubview:left3 withPrecedingMargin:10.0 sideMargin:15.0];
+    [splitView.rightStack addSubview:right1 withPrecedingMargin:0.0 sideMargin:15.0];
+    [splitView.rightStack addSubview:right2 withPrecedingMargin:10.0 sideMargin:10.0];
+    [splitView.rightStack addSubview:right3 withPrecedingMargin:10.0 sideMargin:5.0];
 }
 
 - (void)addView:(UITapGestureRecognizer *)gesture
@@ -73,7 +73,7 @@
     ORColourView *view = [[ORColourView alloc] init];
     view.text = @"Tap to remove";
     view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-    [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:5.0 sideMargin:10.0];
+    [(ORStackView *)gesture.view.superview addSubview:view withPrecedingMargin:5.0 sideMargin:10.0];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeTappedView:)];
     [view addGestureRecognizer:tapGesture];
