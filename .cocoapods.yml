@@ -1,0 +1,6 @@
+highlight_color: '#f57c08'
+highlight_dark_color: '#9a5a21'
+try_pre_hook: 
+  - pod install
+  - echo "When you wanna Stack, you always gotta Stack Hard."
+project: 'ORStackView.xcworkspace'
