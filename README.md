@@ -40,9 +40,9 @@ You can create an ORStackView and simply add subviews to it in the order in whic
   view3.text = @"By default, new subviews are added to the bottom of ORStackView.";
   view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
-  [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
-  [self.view addSubview:view2 withTopMargin:@"40" sideMargin:@"70"];
-  [self.view addSubview:view3 withTopMargin:@"30" sideMargin:@"20"];
+  [self.view addSubview:view1 withPrecedingMargin:20 sideMargin:30"];
+  [self.view addSubview:view2 withPrecedingMargin:40 sideMargin:70];
+  [self.view addSubview:view3 withPrecedingMargin:30 sideMargin:20];
 }
 
 - (void)addView
@@ -50,7 +50,7 @@ You can create an ORStackView and simply add subviews to it in the order in whic
   ORColourView *view = [[ORColourView alloc] init];
   view.text = @"Tap to remove";
   view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-  [self.view addSubview:view withTopMargin:@"5" sideMargin:@"40"];
+  [self.view addSubview:view withPrecedingMargin:5 sideMargin:40];
 }
 ```
 
@@ -58,7 +58,7 @@ You can create an ORStackView and simply add subviews to it in the order in whic
 
 ### ORStackView with ordering
 
-If you have views which should only appear once you've got confirmation from an external source, you can add your subviews using `insertSubview:atIndex:withTopMargin:`, `insertSubview:atIndex:withTopMargin:sideMargin:`, `insertSubview:belowSubview:withTopMargin:` or `insertSubview:aboveSubview:withTopMargin:`
+If you have views which should only appear once you've got confirmation from an external source, you can add your subviews using `insertSubview:atIndex:withPrecedingMargin:`, `insertSubview:atIndex:withPrecedingMargin:sideMargin:`, `insertSubview:belowSubview:withPrecedingMargin:` or `insertSubview:aboveSubview:withPrecedingMargin:`
 
 In this example, subviews appear in a different order than they are added chronologically. Tapping the first subview adds a new subview to the middle of the stack.
 
@@ -91,10 +91,10 @@ In this example, subviews appear in a different order than they are added chrono
   view4.text = @"4 - Lorem ipsum, etc. etc.";
   view4.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 20 };
 
-  [self.view insertSubview:view2 atIndex:0 withTopMargin:@"20" sideMargin:@"20"];
-  [self.view insertSubview:view4 atIndex:1 withTopMargin:@"15" sideMargin:@"20"];
-  [self.view insertSubview:view1 atIndex:0 withTopMargin:@"10" sideMargin:@"20"];
-  [self.view insertSubview:view3 atIndex:2 withTopMargin:@"10" sideMargin:@"20"];
+  [self.view insertSubview:view2 atIndex:0 withPrecedingMargin:20 sideMargin:20];
+  [self.view insertSubview:view4 atIndex:1 withPrecedingMargin:15 sideMargin:20];
+  [self.view insertSubview:view1 atIndex:0 withPrecedingMargin:10 sideMargin:20];
+  [self.view insertSubview:view3 atIndex:2 withPrecedingMargin:10 sideMargin:20];
 }
 
 - (void)addView
@@ -102,7 +102,7 @@ In this example, subviews appear in a different order than they are added chrono
   ORColourView *view = [[ORColourView alloc] init];
   view.text = @"Tap to remove";
   view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-  [self.view addSubview:view withTopMargin:@"5" sideMargin:@"40"];
+  [self.view addSubview:view withPrecedingMargin:5 sideMargin:40];
 }
 ```
 
@@ -146,10 +146,10 @@ In this example, subviews appear in a different order than they are added chrono
   view5.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 60 };
   view5.tag = 5;
 
-  [self.view addSubview:view2 withTopMargin:@"10" sideMargin:@"40"];
-  [self.view addSubview:view5 withTopMargin:@"20" sideMargin:@"20"];
-  [self.view addSubview:view4 withTopMargin:@"10" sideMargin:@"20"];
-  [self.view addSubview:view1 withTopMargin:@"20" sideMargin:@"30"];
+  [self.view addSubview:view2 withPrecedingMargin:10 sideMargin:40];
+  [self.view addSubview:view5 withPrecedingMargin:20 sideMargin:20];
+  [self.view addSubview:view4 withPrecedingMargin:10 sideMargin:20];
+  [self.view addSubview:view1 withPrecedingMargin:20 sideMargin:30];
 }
 
 - (void)addView
@@ -161,7 +161,7 @@ In this example, subviews appear in a different order than they are added chrono
   view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 50 };
   view3.tag = 3;
 
-  [self.view addSubview:view3 withTopMargin:@"20" sideMargin:@"70"];
+  [self.view addSubview:view3 withPrecedingMargin:20 sideMargin:70];
 }
 ```
 
@@ -219,12 +219,12 @@ ORSplitStackView is a view containing two ORStackView columns. Add subviews to t
   right3.text = @"a view";
   right3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 40};
 
-  [splitView.leftStack addSubview:left1 withTopMargin:@"0" sideMargin:@"10"];
-  [splitView.leftStack addSubview:left2 withTopMargin:@"10" sideMargin:@"5"];
-  [splitView.leftStack addSubview:left3 withTopMargin:@"10" sideMargin:@"15"];
-  [splitView.rightStack addSubview:right1 withTopMargin:@"0" sideMargin:@"15"];
-  [splitView.rightStack addSubview:right2 withTopMargin:@"10" sideMargin:@"10"];
-  [splitView.rightStack addSubview:right3 withTopMargin:@"10" sideMargin:@"5"];
+  [splitView.leftStack addSubview:left1 withPrecedingMargin:0 sideMargin:10];
+  [splitView.leftStack addSubview:left2 withPrecedingMargin:10 sideMargin:5];
+  [splitView.leftStack addSubview:left3 withPrecedingMargin:10 sideMargin:15];
+  [splitView.rightStack addSubview:right1 withPrecedingMargin:0 sideMargin:15];
+  [splitView.rightStack addSubview:right2 withPrecedingMargin:10 sideMargin:10];
+  [splitView.rightStack addSubview:right3 withPrecedingMargin:10 sideMargin:5];
 }
 
 - (void)addView:(UITapGestureRecognizer *)gesture
@@ -232,7 +232,7 @@ ORSplitStackView is a view containing two ORStackView columns. Add subviews to t
   ORColourView *view = [[ORColourView alloc] init];
   view.text = @"Tap to remove";
   view.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 24 };
-  [(ORStackView *)gesture.view.superview addSubview:view withTopMargin:@"5" sideMargin:@"10"];
+  [(ORStackView *)gesture.view.superview addSubview:view withPrecedingMargin:5 sideMargin:10];
 }
 ```
 
