@@ -8,7 +8,9 @@
 Makes setting up a collection of stacked views simple.
 Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
 
+### Recommendation
 
+It's probably not the best idea to use ORStackView in a new project, given that UIStackView exists, and there are a lot of pods that aim to have a compatible API with that. Some things that ORStackView does better: View Controllers, and internal margins for individual items. However, you'd probably find yourself fighting the grain in the future.
 
 ### ORStackView
 
