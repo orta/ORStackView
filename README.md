@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/orta/ORStackView.svg)](https://travis-ci.org/orta/ORStackView)
 [![Coverage Status](https://coveralls.io/repos/orta/ORStackView/badge.svg?branch=master)](https://coveralls.io/r/orta/ORStackView?branch=master)
-[![Version](http://cocoapod-badges.herokuapp.com/v/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
+[![Version](http://cocoapod-badges.herokuapp.com/v/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView//)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/ORStackView/badge.png)](http://cocoadocs.org/docsets/ORStackView)
 
 Makes setting up a collection of stacked views simple.
-Uses [FLKAutoLayout](https://github.com/dkduck/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
+Uses [FLKAutoLayout](https://github.com/floriankugler/FLKAutoLayout) to simplify the API, you should probably be using it anyway. Depending on demand this can be switched out. If you're interested in more information you can read  [ORStackView.h](https://github.com/orta/ORStackView/blob/master/Classes/ios/ORStackView.h)
 
 ### Recommendation
 
@@ -244,7 +244,7 @@ ORSplitStackView is a view containing two ORStackView columns. Add subviews to t
 
 ## Installation
 
-ORStackView is available through [CocoaPods](http://cocoapods.org), to install
+ORStackView is available through [CocoaPods](https://cocoapods.org/), to install
 it simply add the following line to your Podfile:
 
   pod "ORStackView"
