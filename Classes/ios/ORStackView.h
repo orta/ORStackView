@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Orta. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 /// A view that will handle vertical stacking subviews for you
 /// allowing arbitrary insertion or removal
 
