@@ -42,7 +42,7 @@ You can create an ORStackView and simply add subviews to it in the order in whic
   view3.text = @"By default, new subviews are added to the bottom of ORStackView.";
   view3.fakeContentSize = (CGSize){ UIViewNoIntrinsicMetric , 100 };
 
-  [self.view addSubview:view1 withPrecedingMargin:20 sideMargin:30"];
+  [self.view addSubview:view1 withPrecedingMargin:20 sideMargin:30];
   [self.view addSubview:view2 withPrecedingMargin:40 sideMargin:70];
   [self.view addSubview:view3 withPrecedingMargin:30 sideMargin:20];
 }
