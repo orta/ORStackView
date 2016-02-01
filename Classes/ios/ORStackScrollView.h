@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Orta. All rights reserved.
 //
 
-#import "ORStackScrollView.h"
 #import "ORStackView.h"
 
 /// A UIScrollView subclass that is automatically set up with the
