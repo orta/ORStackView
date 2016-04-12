@@ -1,5 +1,9 @@
 # ORStackView CHANGELOG
 
+## 2.0.2
+
+* Supports Artsy's FLKAutoLayout v1 (heh) - @orta
+
 ## 2.0.1
 
 * Relaxes support for FLKAutoLayout, to allow using Artsy's FLKAutoLayout v1 - @orta

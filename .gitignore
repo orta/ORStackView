@@ -15,8 +15,6 @@ profile
 DerivedData
 .idea/
 *.hmap
-ORStackView.xcworkspace
-
 #CocoaPods
 Pods
 Podfile.lock

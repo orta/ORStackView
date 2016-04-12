@@ -67,12 +67,12 @@
                 [self addConstraints:constraints];
                 stackView.topConstraint = [constraints firstObject];
             } else {
-                stackView.topConstraint = [[view alignTopEdgeWithView:self predicate:predicate] lastObject];
+                stackView.topConstraint = [view alignTopEdgeWithView:self predicate:predicate];
             }
         } else {
 
             UIView *viewAbove = [self.viewStack[index - 1] view];
-            stackView.topConstraint = [[view constrainTopSpaceToView:viewAbove predicate:predicate] lastObject];
+            stackView.topConstraint = [view constrainTopSpaceToView:viewAbove predicate:predicate];
         }
     }
 
@@ -81,7 +81,7 @@
         UIView *lastView = self.lastView;
         if (self.lastView) {
             NSString *constraint = [NSString stringWithFormat:@"%0.0f", self.bottomMarginHeight];
-            self.bottomConstraint = [[self alignBottomEdgeWithView:lastView predicate:constraint] lastObject];
+            self.bottomConstraint = [self alignBottomEdgeWithView:lastView predicate:constraint];
         }
     }
 

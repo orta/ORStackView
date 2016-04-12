@@ -10,6 +10,30 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>0A20FC73BEE15F1FE484FF01</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-ORStackViewExampleTests/Pods-ORStackViewExampleTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>0E1C1EA983E3B6656BCF96F7</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -24,33 +48,6 @@
 			<string>Pods/Target Support Files/Pods-ORStackViewExample/Pods-ORStackViewExample.release.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>14F0B294B6824B44B34168F0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E9C7E6303EF0450AA7E90779</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>17DCEB40252D42EEB1CAB58D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-ORStackViewExample.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>31567B196DCB44B98185C6CF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>17DCEB40252D42EEB1CAB58D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>31CC201EA22DCFC7AC9E7EC1</key>
 		<dict>
@@ -265,7 +262,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>14F0B294B6824B44B34168F0</string>
+				<string>CD14D90B25924E977E1C57B7</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -294,6 +291,7 @@
 				<string>3CC74D70194245AC0069A97D</string>
 				<string>3CC74D71194245AC0069A97D</string>
 				<string>D39064E21C4F40EE966CB43E</string>
+				<string>0A20FC73BEE15F1FE484FF01</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -549,6 +547,13 @@
 			<key>targetProxy</key>
 			<string>3CCBB58E1942489600559D85</string>
 		</dict>
+		<key>44C301AAD4BC5B790C43486E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF1B01DB3F50532C5E4249CF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>604D941B17BCD45900E331B1</key>
 		<dict>
 			<key>children</key>
@@ -656,7 +661,7 @@
 			<array>
 				<string>3C9C9556194259DB00DEA440</string>
 				<string>3C9C9554194259D300DEA440</string>
-				<string>31567B196DCB44B98185C6CF</string>
+				<string>44C301AAD4BC5B790C43486E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -689,6 +694,7 @@
 				<string>604D942117BCD45900E331B1</string>
 				<string>604D942217BCD45900E331B1</string>
 				<string>A7459F1A43CD44ECA12553B6</string>
+				<string>865156ED22D2804D7A6388C7</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -739,8 +745,8 @@
 				<string>3C9C955719425CB200DEA440</string>
 				<string>3C9C9555194259DB00DEA440</string>
 				<string>3C9C9553194259D300DEA440</string>
-				<string>17DCEB40252D42EEB1CAB58D</string>
-				<string>E9C7E6303EF0450AA7E90779</string>
+				<string>FF1B01DB3F50532C5E4249CF</string>
+				<string>DF075E1ED1986B0C36C35BF6</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1155,6 +1161,8 @@
 				<string>ORStackViewExample/ORStackViewExample-Prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
 				<string>ORStackViewExample/ORStackViewExample-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
 				<key>PRODUCT_NAME</key>
 				<string>ORStackViewExample</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
@@ -1188,6 +1196,8 @@
 				<string>ORStackViewExample/ORStackViewExample-Prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
 				<string>ORStackViewExample/ORStackViewExample-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
 				<key>PRODUCT_NAME</key>
 				<string>ORStackViewExample</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
@@ -1306,6 +1316,30 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>865156ED22D2804D7A6388C7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-ORStackViewExample/Pods-ORStackViewExample-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>98D5E445BC3F662BE6BFD02C</key>
 		<dict>
 			<key>children</key>
@@ -1406,6 +1440,13 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
+		<key>CD14D90B25924E977E1C57B7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DF075E1ED1986B0C36C35BF6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>D39064E21C4F40EE966CB43E</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -1429,6 +1470,19 @@ fi
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
+		</dict>
+		<key>DF075E1ED1986B0C36C35BF6</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_ORStackViewExampleTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>E66861CD1922AB2F0017091C</key>
 		<dict>
@@ -1526,16 +1580,16 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>E9C7E6303EF0450AA7E90779</key>
+		<key>FF1B01DB3F50532C5E4249CF</key>
 		<dict>
 			<key>explicitFileType</key>
-			<string>archive.ar</string>
+			<string>wrapper.framework</string>
 			<key>includeInIndex</key>
 			<string>0</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>libPods-ORStackViewExampleTests.a</string>
+			<string>Pods_ORStackViewExample.framework</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
