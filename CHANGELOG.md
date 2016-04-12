@@ -1,5 +1,10 @@
 # ORStackView CHANGELOG
 
+## 2.0.1
+
+* Relaxes support for FLKAutoLayout, to allow using Artsy's FLKAutoLayout v1 - @orta
+* Adds an API to edit top margins of existing views - 1aurabrown
+
 ## 3.0.1
 
 * iOS7 fixes - @garnett 
